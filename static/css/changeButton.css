@@ -1,0 +1,23 @@
+/* 底部部分 */
+.change_botton{
+    width: 100%;
+    background-color: white;
+    border-top: 0.01rem solid gray;
+    display: flex;
+    justify-content:space-around;
+    position: fixed;
+    left: 0rem;
+    bottom: 0rem;
+    }
+    .change_botton div{
+    float: left;
+    text-align: center;
+    }
+    .change_botton div img{
+    margin-top: 0.05rem;
+    width: 0.2rem;
+    }
+    .change_botton div p{
+    color: gray;
+    font-size: 0.1rem;
+    }
