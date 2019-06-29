@@ -1,4 +1,10 @@
 export default {
       QJ:{},
-      selfId:''
+      selfId:'',
+      balance: "0.00",
+  integral:0,
+  userMsg:{},
+  cityInfo:{},
+  sum:"",
+  imagavater:""
   }

@@ -140,7 +140,7 @@ export default {
     },
     login1() {
       this.$router.push({
-        name: "waimai"
+        name: "first"
       });
     },
     login2() {

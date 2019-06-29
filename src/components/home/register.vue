@@ -100,7 +100,6 @@ export default {
           this.$router.push({
             name: "wode",
             query: res.data
-            // params: { pID: this.username}
           });
         }
       });

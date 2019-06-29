@@ -47,31 +47,23 @@
     </div>
 
     <!-- 底部菜单栏 -->
-    <div class="change_botton">
-      <router-link to="first">
-        <div>
-          <img src="../../assets/homeT.png" alt>
-          <p>外卖</p>
-        </div>
-      </router-link>
-      <router-link to="second">
-        <div>
-          <img src="../../assets/searchF.png" alt>
-          <p>搜索</p>
-        </div>
-      </router-link>
-      <router-link to="third">
-        <div>
-          <img src="../../assets/orderF.png" alt>
-          <p>订单</p>
-        </div>
-      </router-link>
-      <router-link to="four">
-        <div>
-          <img src="../../assets/meF.png" alt>
-          <p>我的</p>
-        </div>
-      </router-link>
+   <div id="menu">
+      <div>
+        <img  src="../img/SSS1.png" alt>
+        <p>外卖</p>
+      </div>
+      <div>
+        <img @click="login2()" src="../img/zhinanzhen.png" alt>
+        <p>搜索</p>
+      </div>
+      <div>
+        <img @click="login3()" src="../img/dingdan1.png" alt>
+        <p>订单</p>
+      </div>
+      <div>
+        <img @click="login1()" src="../img/touxiang2.png" alt>
+        <p>我的</p>
+      </div>
     </div>
   </div>
 </template>
@@ -101,6 +93,21 @@ export default {
    
   },
   methods: {
+     login1() {
+      this.$router.push({
+        name: "wode"
+      });
+    },
+    login2() {
+      this.$router.push({
+        name: "ss"
+      });
+    },
+    login3() {
+      this.$router.push({
+        name: "dingdan"
+      });
+    },
     fanhui() {
       this.$router.back();
     },

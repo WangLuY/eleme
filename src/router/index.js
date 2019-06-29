@@ -159,11 +159,6 @@ export default new Router({
       name: 'wode',
       component: Wode
     },
-    {
-      path: '/waimai',
-      name: 'waimai',
-      component: Waimai
-    },
 {
   path: '/information',
   name: 'information',

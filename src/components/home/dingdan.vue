@@ -43,7 +43,7 @@ export default {
     },
     login3() {
       this.$router.push({
-        name: "waimai"
+        name: "first"
       });
     }
   }
