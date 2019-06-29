@@ -5,8 +5,8 @@
       <img @click="fanhui" src="../../assets/find.png" alt>
       <p>{{this.$route.query.name}}</p>
       <span>
-        <router-link to="landing" style="color:white">登陆</router-link>|
-        <router-link to="landing" style="color:white">注册</router-link>
+        <router-link to="/wode" style="color:white">登陆</router-link>|
+        <router-link to="/wode" style="color:white">注册</router-link>
       </span>
     </div>
     <!-- 轮播部分 -->
