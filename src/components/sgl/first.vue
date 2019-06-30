@@ -2,11 +2,11 @@
   <div class="first">
     <!-- 顶部栏 -->
     <div class="citysearchTop">
-      <img @click="fanhui" src="../../assets/find.png" alt>
-      <p>{{this.$route.query.name}}</p>
+      <img @click="fanhui" src="../../assets/find.png" alt />
+      <p>{{add}}</p>
       <span>
-        <router-link to="/wode" style="color:white">登陆</router-link>|
-        <router-link to="/wode" style="color:white">注册</router-link>
+        <router-link to="register" style="color:white">登陆</router-link>|
+        <router-link to="register" style="color:white">注册</router-link>
       </span>
     </div>
     <!-- 轮播部分 -->
@@ -17,12 +17,12 @@
     <!-- 商家店铺 -->
     <!-- 下面商铺部分 -->
     <div to="xiadan" id="allShop">
-      <img src="../../assets/Group-.png" alt>
+      <img src="../../assets/Group-.png" alt />
       <span>附近商家</span>
       <ul>
         <li v-for="(item, index) in allShop" :key="index" @click="addA(item)">
           <router-link :to="'xiadan?shopId='+item.id" id="shop">
-            <img :src="'https://elm.cangdu.org/img/'+item.image_path" id="shopImg">
+            <img :src="'https://elm.cangdu.org/img/'+item.image_path" id="shopImg" />
             <p id="shopname">
               <span>品牌</span>
               <span>{{item.name}}</span>
@@ -47,21 +47,21 @@
     </div>
 
     <!-- 底部菜单栏 -->
-   <div id="menu">
+    <div id="menu">
       <div>
-        <img  src="../img/SSS1.png" alt>
+        <img src="../img/SSS1.png" alt />
         <p>外卖</p>
       </div>
       <div>
-        <img @click="login2()" src="../img/zhinanzhen.png" alt>
+        <img @click="login2()" src="../img/zhinanzhen.png" alt />
         <p>搜索</p>
       </div>
       <div>
-        <img @click="login3()" src="../img/dingdan1.png" alt>
+        <img @click="login3()" src="../img/dingdan1.png" alt />
         <p>订单</p>
       </div>
       <div>
-        <img @click="login1()" src="../img/touxiang2.png" alt>
+        <img @click="login1()" src="../img/touxiang2.png" alt />
         <p>我的</p>
       </div>
     </div>
@@ -76,7 +76,8 @@ export default {
     return {
       datas: {},
       allShop: {},
-      detailAdd: {}
+      detailAdd: {},
+      add:""
     };
   },
   created() {
@@ -87,13 +88,13 @@ export default {
     //   spinner:'el-icon-loading'
     // })
     console.log(this.$route.query);
+    console.log(this.$route.query.address);
+    this.add=this.$route.query.address;
     this.datas = this.$route.query;
-     this.getDetail();
-   
-   
+    this.getDetail();
   },
   methods: {
-     login1() {
+    login1() {
       this.$router.push({
         name: "wode"
       });
@@ -113,16 +114,14 @@ export default {
     },
     getDetail() {
       this.$http({
-        url:
-          "https://elm.cangdu.org/v2/pois/" +
-          this.datas.geohash,
+        url: "https://elm.cangdu.org/v2/pois/" + this.datas.geohash,
         method: "get",
         withCredentials: true
       }).then(res => {
         // console.log(res);
         this.detailAdd = res.data;
         console.log(this.detailAdd);
-         this.getshop();
+        this.getshop();
       });
     },
     getshop() {
@@ -136,25 +135,20 @@ export default {
         method: "get",
         withCredentials: true
       }).then(res => {
-        // console.log("https://elm.cangdu.org/shopping/restaurants?latitude=" +
-        //   this.detailAdd.latitude +
-        //   "&longitude=" +
-        //   this.detailAdd.longitude +
-        //   "&limit=20");
         console.log(res.data);
         this.allShop = res.data;
       });
     },
-     addA(v){
-            this.$store.commit('QjSjXq',v);
-            this.$store.commit('cunId',v.id);
-        }
+    addA(v) {
+      this.$store.commit("QjSjXq", v);
+      this.$store.commit("cunId", v.id);
+    }
   }
 };
 </script>
 <style scoped>
 .first {
-  /* float: left; */
+  padding-bottom: 0.7rem;
 }
 .citysearchTop {
   width: 100%;

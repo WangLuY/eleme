@@ -1,26 +1,26 @@
 <template>
   <div>
     <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt>
+      <img @click="back()" src="../img/左箭头.png" alt />
       <span>{{this.$route.query.name}}</span>
       <router-link id="switchover" to="/citylist">切换城市</router-link>
     </div>
     <div id="conter">
       <div id="content">
-        <input v-model="searchPlace" type="text" placeholder="输入学校、商务楼、地址">
+        <input v-model="searchPlace" type="text" placeholder="输入学校、商务楼、地址" />
         <button @click="get()">提交</button>
       </div>
     </div>
     <div id="Search">
       <p>搜索历史</p>
       <ul>
-        <router-link to="/wode">
         <li v-for="(v,i) in arr" :key="i">
-          {{v.name}}
-          <br>
-          {{v.address}}
+          <router-link :to="'/first?address='+v.address">
+            {{v.name}}
+            <br />
+            {{v.address}}
+          </router-link>
         </li>
-        </router-link>
       </ul>
     </div>
   </div>
@@ -63,8 +63,8 @@ export default {
         }
       }).then(res => {
         //请求返回的数据res
-        this.arr = res.data;
         console.log(res.data);
+        this.arr = res.data;
       });
     }
   }
