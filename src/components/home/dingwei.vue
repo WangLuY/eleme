@@ -32,7 +32,7 @@ export default {
     created() {
         this.searchID=this.$route.query.id;
         this.searchName=this.$route.query.name;
-        
+        this.getCity();
     },
     data() {    
         return {
@@ -47,6 +47,9 @@ export default {
         back(){
             this.$router.back();
         },
+         getCity() {
+      this.$store.commit("getCity", this.$route.query);
+    },
         //将定位存储到全局中
         dingWei(v){
             this.$router.push({

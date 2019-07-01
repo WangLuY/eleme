@@ -127,7 +127,7 @@ export default {
   box-shadow: none;
 }
 #huan {
-  color: greenyellowa;
+  color: cornflowerblue;
 }
 .button {
   width: 100%;

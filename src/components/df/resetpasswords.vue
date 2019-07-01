@@ -16,7 +16,7 @@
           <div id="but">
             <button @click="getCode()">看不清</button>
             <br>
-            <button @click="getCode()">换一张</button>
+            <button id="two" @click="getCode()">换一张</button>
           </div>
         </div>
       </div>
@@ -97,6 +97,9 @@ export default {
 };
 </script>
 <style scoped>
+#two{
+  color: #3b95e9;
+}
 #conter {
   margin-top: 0.5rem;
 }
