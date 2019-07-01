@@ -38,12 +38,12 @@ export default {
     },
     login2() {
       this.$router.push({
-        name: "ss"
+        name: "findFood"
       });
     },
     login3() {
       this.$router.push({
-        name: "first"
+        name: "family"
       });
     }
   }

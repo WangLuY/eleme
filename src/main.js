@@ -12,6 +12,11 @@ Vue.use(VueAxios, axios)
 import store from './store'
 Vue.config.productionTip = false
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

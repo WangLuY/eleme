@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/home'
 import Citylist from '@/components/home/citylist'
 import Register from '@/components/home/register'
-import Dingwei from '@/components/home/dingwei'
+// import Dingwei from '@/components/home/dingwei'
 import Resetpasswords from '@/components/df/resetpasswords'
 import Landing from '@/components/sgl/landing'
 import Citysearch from '@/components/sgl/citysearch'
@@ -46,6 +46,16 @@ import Goumaivip from '@/components/df/goumaivip'
 import Duihuanvip from '@/components/df/duihuanvip'
 import Goumaijilu from '@/components/df/goumaijilu'
 import Dingdan from '@/components/home/dingdan'
+import Dingwei from '@/components/home/dingwei'
+import History from '@/components/home/history'
+import FirstPage from '@/components/wly/firstpage'
+import Family from '@/components/wly/family'
+import Shangjialist from '@/components/wly/shangjialist'
+import Shoplist from '@/components/sgl/shoplist'
+import FindFood from '@/components/wly/findFood'
+import FindHistory from '@/components/wly/findHistory'
+
+
 
 Vue.use(Router)
 
@@ -76,11 +86,11 @@ export default new Router({
       name: 'resetpasswords',
       component: Resetpasswords
     },
-    {
-      path: '/dingwei',
-      name: 'dingwei',
-      component: Dingwei
-    },
+    // {
+    //   path: '/dingwei',
+    //   name: 'dingwei',
+    //   component: Dingwei
+    // },
     {
       path: '/dingdan',
       name: 'dingdan',
@@ -293,6 +303,66 @@ export default new Router({
   path: '/goumaijilu',
   name: 'goumaijilu',
   component:Goumaijilu
-}
+},
+{
+  path: '/dingwei',
+  name: 'dingwei',
+  component: Dingwei,
+  children:[
+    {
+      path:"",
+      name:"history",
+      component: History
+    },
+    {
+      path:"/history",
+      name:"history",
+      component: History
+    }
   ]
-})
+},
+{
+  path:"/family",
+  name:"family",
+  component: Family,
+  // redirect:"/firstpage",
+  // children:[
+  //   {
+  //     path:"/firstpage",
+  //     // name:"firstpage",
+  //     components:{
+  //       header:FirstPage,
+  //       default:FirstPage,
+  //       content:Shoplist
+  //     } 
+  //   },
+  // ]
+}, //点击firstpage后进入的页面
+{
+  path:"/shangjialist",
+  name:"shangjia",
+  component:Shangjialist,
+  redirect:"/shoplist",
+  children:[
+    {
+      path:"/shoplist",
+      name:"shoplist",
+      component:Shoplist
+    }
+  ]
+},
+//搜索按钮的路由跳转
+{
+  path:"/findFood",
+  name:"findFood",
+  component:FindFood,
+  redirect:"/findHistory",
+  children:[
+    {
+      path:"/findHistory",
+      name:"findHistory",
+      component:FindHistory
+    }
+  ]
+}
+]})

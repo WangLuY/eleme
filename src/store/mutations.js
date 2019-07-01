@@ -29,5 +29,22 @@ export default{
   },
   getavater(state,d){
       state.imagavater=d
-  }
+  },
+    //获得经纬度的参数
+    getLongitude(state,longitude){
+      state.longitude=longitude;
+    },
+    getLatitude(state,latitude){
+      state.latitude=latitude;
+    },
+    //获得排序方式的id值
+    savePaixuID(state,PaixuID){
+      state.paixuId=PaixuID
+      // console.log("这是一个在state中的id值")
+    },
+    //存储定位的对象
+    saveDingwei(state,dingwei){
+      state.dingwei=dingwei;
+      console.log(dingwei);
+    }
 }

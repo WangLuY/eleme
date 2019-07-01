@@ -1,114 +1,147 @@
 <template>
-  <div>
-    <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt />
-      <span>{{this.$route.query.name}}</span>
-      <router-link id="switchover" to="/citylist">切换城市</router-link>
+    <div>
+        <div class="nav">
+            <img src="../wly/imgs/foot/back.png" @click="back()" alt>
+            <span id="getcity">{{this.$route.query.name}}</span>
+            <span @click="back()">切换城市</span>
+        </div>
+        <div class="search">
+            <input v-model="searchPlace" type="text" placeholder="输入学校、商务楼、地址">
+            <div @click="search()">提交</div>
+        </div>
+        <!-- 搜索结果 -->
+        <div class="result">
+            <ul class="resultlist">
+                <li v-for="(v,i) in searchResult" :key="i"  @click="dingWei(v)">
+                     <!-- <router-link :to="'/family?name='+v.name+'&address='+v.address+'&latitude='+v.latitude+'&longitude='+v.longitude" tag="div"> -->
+                        <p>{{v.name}}</p>
+                        <p>{{v.address}}</p>
+                     <!-- </router-link> -->
+                </li>
+            </ul>
+        </div>
+        <!-- 搜索历史 -->
+       <router-view v-if="showhistroy"></router-view>
+        
     </div>
-    <div id="conter">
-      <div id="content">
-        <input v-model="searchPlace" type="text" placeholder="输入学校、商务楼、地址" />
-        <button @click="get()">提交</button>
-      </div>
-    </div>
-    <div id="Search">
-      <p>搜索历史</p>
-      <ul>
-        <li v-for="(v,i) in arr" :key="i">
-          <router-link :to="'/first?address='+v.address">
-            {{v.name}}
-            <br />
-            {{v.address}}
-          </router-link>
-        </li>
-      </ul>
-    </div>
-  </div>
 </template>
+
 <script>
 export default {
-  name: "dingwei",
-  created() {
-    this.searchId = this.$route.query.id;
-    this.searchname = this.$route.query.name;
-    this.getCity();
-  },
-  data() {
-    return {
-      searchPlace: "",
-      searchId: "",
-      searchname: "",
-      arr: []
-    };
-  },
-  methods: {
-    getCity() {
-      this.$store.commit("getCity", this.$route.query);
+    name:"dingwei",
+    created() {
+        this.searchID=this.$route.query.id;
+        this.searchName=this.$route.query.name;
+        
     },
-    back() {
-      this.$router.back();
-    },
-    get() {
-      const api =
-        "https://elm.cangdu.org/v1/pois?city_id=" +
-        this.searchId +
-        "&keyword=" +
-        this.searchPlace +
-        "&type=search";
-      this.$http({
-        url: api,
-        method: "get",
-        data: {
-          //post的请求参数
+    data() {    
+        return {
+            searchPlace:"",
+            searchID:"",
+            searchName:"",
+            searchResult:"",
+            showhistroy:true
         }
-      }).then(res => {
-        //请求返回的数据res
-        console.log(res.data);
-        this.arr = res.data;
-      });
-    }
-  }
-};
+    },
+    methods: {
+        back(){
+            this.$router.back();
+        },
+        //将定位存储到全局中
+        dingWei(v){
+            this.$router.push({
+                name:"family"
+            })
+            this.$store.commit("saveDingwei",v);
+            // console.log("哈哈哈哈哈！我跳转了");
+        },
+        search(){
+             //连接api
+            const api="https://elm.cangdu.org/v1/pois?city_id="+this.searchID+"&keyword="+this.searchPlace+"&type=search";
+            //get请求方式
+            this.$http.get(api).then(
+                res=>{
+                    this.searchResult=res.data;
+                    //将获得的定位信息存储到全局中
+                    // this.$store.commit("saveDingwei",res.data);
+                    this.showhistroy=!this.showhistroy;
+                    console.log(res.data);
+                    
+                }
+            )
+
+        }
+    },
+}
 </script>
-<style scoped>
-#switchover {
-  float: right;
-  margin-right: 10px;
-}
-#conter {
-  margin-top: 0.5rem;
-  background-color: white;
-  padding: 0.1rem;
-  border-top: 2px solid #e4e4e4;
-  border-bottom: 2px solid #e4e4e4;
-}
-#content {
-  width: 90%;
-  margin-left: 5%;
-}
-#content input {
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid black;
-  height: 0.3rem;
-}
-#content button {
-  width: 100%;
-  background-color: blue;
-  color: white;
-  height: 0.3rem;
-  border: blue;
-  margin-top: 5px;
-  border-radius: 5px;
-}
-p {
-  font-size: 0.05rem;
-  padding: 0.05rem;
-  border-bottom: 2px solid #e4e4e4;
-}
-#Search li {
-  background-color: white;
-  padding: 0.1rem;
-  border-bottom: 1px solid #e4e4e4;
-}
+
+<style lang="">
+    .nav{
+        box-sizing: border-box;
+        width: 100%;
+        height: 0.5rem;
+        background-color: #3190e8;
+        color: white;
+        overflow: hidden;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        text-align: center;
+        line-height: 0.5rem;
+        font-size: 0.2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav>img{
+        width: 0.5rem;
+    }
+    #logo{
+        font-size: 0.15rem;
+    }
+    #changecity{
+        font-size: 0.1rem;
+    }
+    .search{
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 0.6rem;
+        border-top: 1px solid #9C9C9C;
+        border-bottom: 1px solid #9C9C9C;
+        padding: 0.1rem 0.3rem;
+    }
+    .search>input{
+        width: 100%;
+        height: 0.3rem;
+        font-size: 0.15rem;
+        border: 1px solid #9C9C9C;
+    }
+    .search>div{
+        width: 100%;
+        height: 0.3rem;
+        background-color: #3190E8;
+        margin-top:0.1rem;
+        text-align: center;
+        line-height: 0.3rem;
+        border-radius: 0.02rem;
+        color: white;
+    }
+    .result{
+        /* margin-top: 0.6rem; */
+    }
+    .resultlist>li{
+        padding: 0.05rem 0.1rem;
+        border: 1px solid #e4e4e4;
+    }
+    .resultlist p:nth-child(1){
+        
+        font-size: 0.15rem;
+    }
+    .resultlist p:nth-child(2){
+        color: #ABAB9F;
+        margin-top:0.05rem;
+        font-size: 0.05rem;
+    }
+
+
 </style>
