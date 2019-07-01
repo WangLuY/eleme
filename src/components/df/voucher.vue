@@ -2,7 +2,7 @@
   <div id="voucher">
     <router-link to="/djqshuoming">
     <div id="top">
-      <i class="el-icon-question"></i>
+      <img id="wen" src="../img/wenhao.png" alt="">
       <span>商家代金券说明</span>
     </div>
     </router-link>
@@ -49,5 +49,8 @@ img {
 }
 #but {
   margin-top: 0.2rem;
+}
+#wen{
+  width: 0.11rem;
 }
 </style>

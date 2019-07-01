@@ -1,6 +1,6 @@
 <template>
   <div id="fuwuzhongxin">
-    <div id="nav">
+    <div id="nav1">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>服务中心</span>
     </div>
@@ -382,6 +382,29 @@ export default {
 };
 </script>
 <style scoped>
+#nav1 {
+    width: 100%;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    background-color: #3190e8;
+    color: white;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    text-align: center;
+    overflow: hidden;
+  }
+  #nav1 img {
+    width: 0.1rem;
+    float: left;
+    padding: 0.12rem;
+  }
+  #nav1 span {
+    font-size: 0.2rem;
+    margin-right: 0.1 rem;
+  }
 #conter {
   margin-top: 0.4rem;
   background-color: #fff;

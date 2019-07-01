@@ -6,7 +6,7 @@
       </p>
      <router-link to="/redexplain">
       <div>
-        <i class="el-icon-question"></i>
+        <img id="wen" src="../img/wenhao.png" alt="">
         <span>红包说明</span>
       </div>
      </router-link>
@@ -111,6 +111,9 @@ export default {
 };
 </script>
 <style scoped>
+#wen{
+  width: 0.11rem;
+}
 #top {
   font-size: 0.1rem;
   overflow: hidden;

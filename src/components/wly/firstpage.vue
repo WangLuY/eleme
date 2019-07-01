@@ -100,28 +100,6 @@ export default {
 </script>
 
 <style lang="">
-    #top {
-width: 100%;
-height: 0.5rem;
-line-height: 0.5rem;
-background-color: #3190e8;
-color: white;
-overflow: hidden;
-position: fixed;
-left: 0;
-top: 0;
-z-index: 3;
-display: flex;
-justify-content:space-between;
-}
-#ele {
-color: white;
-font-size: 0.15rem;
-}
-#nav-right {
-font-size: 0.15rem;
-color: white;
-}
 .addr{
     text-align: center;
     font-size:0.2rem;
