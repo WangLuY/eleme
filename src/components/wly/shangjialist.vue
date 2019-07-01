@@ -29,25 +29,28 @@
           <p slot-scope="{ node, data }">{{data.label}}</p>
         </el-cascader>
         <!-- 筛选 -->
-        <!-- <div v-show="xy" id="sai_x">
-          <ul>
-            <li id="sai_1">配送方式</li>
-            <li id="sai_2">
-              <input type="checkbox" />{{peisong[0].text}}
-            </li>
-            <li id="sai_3">商家属性(可以多选)</li>
-          </ul>
-          <ul id="sai_ul">
-            <li id="sai_4" :key="i" v-for="(v,i) in shux">
-              <input :checked="qk" type="checkbox" />
-              {{v.name}}
-            </li>
-          </ul>
-        </div> -->
-        <!-- <div v-show="xy" id="wei_b">
-          <span @click="qk_qk()" id="qing_k">清空</span>
-          <span @click="xs_yc()" id="que_d">确定</span>
-        </div> -->
+        <div @click="xs_yc()" class="shaixuan">筛选</div>
+        <div class="backGround">
+          <div v-show="xy" id="sai_x">
+            <ul>
+              <li id="sai_1">配送方式</li>
+              <li id="sai_2">
+                <input type="checkbox" />蜂鸟配送
+              </li>
+              <li id="sai_3">商家属性(可以多选)</li>
+            </ul>
+            <ul id="sai_ul">
+              <li id="sai_4" :key="i" v-for="(v,i) in shux">
+                <input :checked="qk" type="checkbox" />
+                {{v.name}}
+              </li>
+            </ul>
+          </div>
+          <div v-show="xy" id="wei_b">
+            <span @click="qk_qk()" id="qing_k">清空</span>
+            <span @click="xs_yc()" id="que_d">确定</span>
+          </div>
+        </div>
       </div>
     </div>
     <div id="space"></div>
@@ -61,8 +64,8 @@ export default {
   data() {
     return {
       xy: false,
-      peisong:[],
-      shux:[],
+      peisong: [],
+      shux: [],
       paixus: [],
       //定义对象，存储所有的商家信息
       resMsg: [],
@@ -139,22 +142,20 @@ export default {
       }
     },
     //获取配送方式
-    getPeisong(){
-      const api="https://elm.cangdu.org/shopping/v1/restaurants/delivery_modes";
-      this.$http.get(api).then(
-        res=>{
-          this.peisong=res.data;
-        }
-      )
+    getPeisong() {
+      const api =
+        "https://elm.cangdu.org/shopping/v1/restaurants/delivery_modes";
+      this.$http.get(api).then(res => {
+        this.peisong = res.data;
+      });
     },
     //获得商家活动属性列表
-    getshux(){
-      const api="https://elm.cangdu.org/shopping/v1/restaurants/activity_attributes";
-      this.$http.get(api).then(
-        res=>{
-          this.shux=res.data;
-        }
-      )
+    getshux() {
+      const api =
+        "https://elm.cangdu.org/shopping/v1/restaurants/activity_attributes";
+      this.$http.get(api).then(res => {
+        this.shux = res.data;
+      });
     },
     //筛选
     xs_yc() {
@@ -249,7 +250,24 @@ export default {
 .top_b {
   list-style-type: none;
   display: flex;
-  /* justify-content: space-between; */
+  /* justify-content: !important; */
+}
+.shaixuan {
+  width: 50%;
+  border: 1px solid #eff0f3;
+  height: 0.34rem;
+  line-height: 0.34rem;
+  color: #c2c6cd;
+  background-color: #fff;
+}
+.backGround{
+  background-color:#fff;
+  position: absolute;
+  left: 0;
+  top: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid;
 }
 .top_b .el-input__inner {
   /* border: 1px solid #DCDFE6; */
@@ -317,36 +335,38 @@ export default {
   /* border-radius: 50%; */
   height: 100%;
 }
-#saiX {
+/* #saiX {
   color: #666;
   font-size: 0.14rem;
-}
-#saiX1 {
+} */
+/* #saiX1 {
   border: #e4e4e4 solid 0.01rem;
   width: 1.23rem;
   border-radius: 0.05rem;
   margin-top: 0.005rem;
-}
-#saiX2 {
+} */
+/* #saiX2 {
   border: #3190e8 solid 0.01rem;
   width: 1.23rem;
   border-radius: 0.05rem;
   margin-top: 0.005rem;
-}
-#sai_x {
+} */
+/* #sai_x {
   background-color: #fff;
   border-top: #e4e4e4 0.01rem solid;
   position: fixed;
   left: 0;
   top: 0.89rem;
   z-index: 100;
-}
+  width: 100%;
+} */
 #sai_1,
 #sai_3 {
   color: #4e4e4e;
   font-size: 0.13rem;
   margin-top: 0.1rem;
   margin-left: 0.12rem;
+  text-align: left;
 }
 #sai_2 {
   color: #4e4e4e;
@@ -363,7 +383,7 @@ export default {
   background-color: #fff;
   overflow: hidden;
 }
-#sai_4 {
+/* #sai_4 {
   color: #4e4e4e;
   font-size: 0.11rem;
   margin-top: 0.1rem;
@@ -373,13 +393,13 @@ export default {
   float: left;
   width: 28vw;
   height: 0.3rem;
-}
-#sai_4 input,
+} */
+/* #sai_4 input,
 #sai_2 input {
   margin-left: 0.06rem;
   margin-right: 0.1rem;
-}
-#wei_b {
+} */
+/* #wei_b {
   width: 100vw;
   height: 0.5rem;
   background-color: #e4e4e4;
@@ -387,12 +407,12 @@ export default {
   left: 0;
   top: 2.61rem;
   z-index: 100;
-}
+} 
 #quanp {
   background-color: rgba(0, 0, 0, 0.2);
   height: 100vh;
   margin-top: 0.5rem;
   width: 100vw;
   opacity: 0.4;
-}
+} */
 </style>

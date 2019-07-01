@@ -1,14 +1,14 @@
 <template>
-    <div>
-        <p>搜索历史</p>
+    <div class="history">
+        <p class="history_p">搜索历史</p>
         <ul>
             <li v-for="(v,i) in After" :key="i" class="inputList">
                 <span>{{v}}</span>
-                <span @click="delMsg(i)">删除该条记录</span>
+                <span @click="delMsg(i)">删除</span>
             </li>
             
         </ul> 
-        <p @click="delAll()">删除历史记录</p> 
+        <p class="history_clear" @click="delAll()">删除历史记录</p> 
     </div>
 </template>
 
@@ -20,7 +20,8 @@ export default {
             //定义一个数组，存储搜索及记录
             foodArr:[],
             //定义一个数组，保存去重后
-            After:[]
+            After:[],
+            localStr:""
         }
     },
     created() {
@@ -51,6 +52,10 @@ export default {
         },
         delMsg(i){
             this.After.splice(i,1);
+            // for (let index = 0; index < this.After.length; index++) {
+            //     this.localStr+=this.After[i]+",";
+            // }
+            // localStorage.food=this.localStr;
         }
     },
 }
@@ -58,7 +63,29 @@ export default {
 
 <style lang="">
 .inputList{
-    display: flex;
-    justify-content: space-between;
+    margin: 0.1rem 0;
+    overflow: hidden;
+}
+.inputList>span:nth-child(1){
+    float: left;
+}
+.inputList>span:nth-child(2){
+    float:right;
+}
+.history{
+    padding: 0.2rem;
+}
+.history_p{
+    background-color: #F5F5F5;
+    /* padding: 0.01rem; */
+    margin: 0.2rem 0;
+    /* font-size: 0.02rem; */
+    color: #666666;
+}
+.history_clear{
+    text-align: center;
+    width: 100%;
+    font-size: 0.15rem;
+    color: #4C8DE0;
 }
 </style>

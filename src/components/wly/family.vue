@@ -36,9 +36,6 @@
         <img src="../img/touxiang2.png" alt />
         <p>我的</p>
       </router-link>
-      <div>
-        
-      </div>
     </div>
   </div>
 </template>

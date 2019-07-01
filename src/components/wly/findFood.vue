@@ -199,7 +199,7 @@ export default {
   box-sizing: border-box;
   width: 69%;
   float: left;
-  font-size: 0.15rem;
+  font-size: 0.12rem;
   font-weight: bold;
   height: 0.3rem;
   background-color: #f2f2f2;
