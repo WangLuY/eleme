@@ -64,7 +64,7 @@ export default {
             console.log(this.Spadd);
         },
         fanhui() {
-        this.$router.push("first");
+        this.$router.push("family");
         },
         getLastid(){
              this.getId=this.$route.query.shopId;
