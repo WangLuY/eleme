@@ -71,7 +71,7 @@
 // import { Loading } from 'element-ui';
 // let loadingInstance;
 export default {
-  name: "first",
+  name: "shoplist",
   data() {
     return {
       datas: {},
@@ -140,8 +140,14 @@ export default {
       });
     },
     addA(v) {
+      console.log(v);
       this.$store.commit("QjSjXq", v);
       this.$store.commit("cunId", v.id);
+      this.$store.commit("getcanguanId", v.id);
+       this.$router.push({
+        name: "xiadan"
+      });
+      
     }
   }
 };

@@ -54,7 +54,7 @@ import Shangjialist from '@/components/wly/shangjialist'
 import Shoplist from '@/components/sgl/shoplist'
 import FindFood from '@/components/wly/findFood'
 import FindHistory from '@/components/wly/findHistory'
-
+import test from '@/components/sgl/test'
 
 
 Vue.use(Router)
@@ -120,12 +120,18 @@ export default new Router({
       path: '/xiadan',
       name: 'xiadan',
       component: Xiadan,
-      redirect:'/xiadangoods',
+      // redirect:'/xiadangoods',
+      redirect:'/test',
       children:[
+        // {
+        //   path: '/xiadangoods',
+        //   name: 'xiadangoods',
+        //   component: Xiadangoods,
+        // },
         {
-          path: '/xiadangoods',
-          name: 'xiadangoods',
-          component: Xiadangoods,
+          path: '/test',
+          name: 'test',
+          component: test,
         },
         {
           path: '/xiadanevaluation',

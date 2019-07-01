@@ -11,7 +11,7 @@
     <FirstPage />
     <Shoplist />
     <!-- <router-view name="header"></router-view> -->
-    <router-view name="content" class="content"></router-view>
+    <!-- <router-view name="content" class="content"></router-view> -->
 
     <div id="menu">
       <div>
