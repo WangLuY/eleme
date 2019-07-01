@@ -202,7 +202,7 @@ export default {
   font-size: 0.12rem;
   font-weight: bold;
   height: 0.3rem;
-  background-color: #f2f2f2;
+  background-color: #fff;
   border-radius: 0.02rem;
 }
 .inputFood > span {
