@@ -51,7 +51,7 @@
     </div>
     <div id="bot-top">
       <div class="menu">
-        <div class="el-icon-tickets"></div>
+        <img class="logo" src="../img/dingdan.png" alt="">
         <span>我的订单</span>
         <router-link to="/dingdan">
           <img class="yjt" src="../img/iconfontjiantou2.png" alt>
@@ -59,7 +59,7 @@
       </div>
       <router-link to="/jifensc">
         <div class="menu">
-          <div class="el-icon-s-goods"></div>
+          <img class="logo" src="../img/dangao.png" alt="">
           <span>积分商城</span>
           <img class="yjt" src="../img/iconfontjiantou2.png" alt>
         </div>
@@ -82,7 +82,7 @@
       </div>
       <router-link to="/download">
         <div class="menu">
-          <div class="el-icon-eleme"></div>
+          <img class="logo" src="../img/eliaomo.png" alt="">
           <span>下载饿了么App</span>
           <img class="yjt" src="../img/iconfontjiantou2.png" alt>
         </div>

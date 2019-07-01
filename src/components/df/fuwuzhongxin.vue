@@ -1,25 +1,27 @@
 <template>
   <div id="fuwuzhongxin">
-    <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt>
+    <div id="nav1">
+      <img @click="back()" src="../img/左箭头.png" alt />
       <span>服务中心</span>
     </div>
     <div id="conter">
       <div id="top">
         <div id="top-left">
-          <img src="../img/kefu.png" alt>
+          <img src="../img/kefu.png" alt />
           <p>在线客服</p>
         </div>
         <div id="top-right">
-          <img src="../img/dianhua.png" alt>
-          <p>在线客服</p>
+          <a href="tel:15716646150">
+            <img src="../img/dianhua.png" alt />
+            <p>在线客服</p>
+          </a>
         </div>
       </div>
       <p>热门问题</p>
       <ul>
         <li @click="getCode(i)" v-for="(v,i) in data" :key="i">
           <span>{{v}}</span>
-          <img class="yjt" src="../img/iconfontjiantou2.png" alt>
+          <img class="yjt" src="../img/iconfontjiantou2.png" alt />
         </li>
       </ul>
     </div>
@@ -76,8 +78,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==1){
+      } else if (i == 1) {
         this.$http({
           url: api,
           method: "get"
@@ -91,8 +92,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==2){
+      } else if (i == 2) {
         this.$http({
           url: api,
           method: "get"
@@ -106,8 +106,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==3){
+      } else if (i == 3) {
         this.$http({
           url: api,
           method: "get"
@@ -121,8 +120,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==4){
+      } else if (i == 4) {
         this.$http({
           url: api,
           method: "get"
@@ -136,8 +134,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==5){
+      } else if (i == 5) {
         this.$http({
           url: api,
           method: "get"
@@ -151,8 +148,7 @@ export default {
             }
           });
         });
-      }
-       else if(i==6){
+      } else if (i == 6) {
         this.$http({
           url: api,
           method: "get"
@@ -166,8 +162,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==7){
+      } else if (i == 7) {
         this.$http({
           url: api,
           method: "get"
@@ -181,8 +176,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==8){
+      } else if (i == 8) {
         this.$http({
           url: api,
           method: "get"
@@ -196,8 +190,7 @@ export default {
             }
           });
         });
-      }
-       else if(i==9){
+      } else if (i == 9) {
         this.$http({
           url: api,
           method: "get"
@@ -211,8 +204,7 @@ export default {
             }
           });
         });
-      }
-       else if(i==10){
+      } else if (i == 10) {
         this.$http({
           url: api,
           method: "get"
@@ -226,8 +218,7 @@ export default {
             }
           });
         });
-      }
-       else if(i==11){
+      } else if (i == 11) {
         this.$http({
           url: api,
           method: "get"
@@ -241,8 +232,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==12){
+      } else if (i == 12) {
         this.$http({
           url: api,
           method: "get"
@@ -256,8 +246,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==13){
+      } else if (i == 13) {
         this.$http({
           url: api,
           method: "get"
@@ -271,8 +260,7 @@ export default {
             }
           });
         });
-      }
-       else if(i==14){
+      } else if (i == 14) {
         this.$http({
           url: api,
           method: "get"
@@ -286,8 +274,7 @@ export default {
             }
           });
         });
-      }
-       else if(i==15){
+      } else if (i == 15) {
         this.$http({
           url: api,
           method: "get"
@@ -301,8 +288,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==16){
+      } else if (i == 16) {
         this.$http({
           url: api,
           method: "get"
@@ -316,8 +302,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==17){
+      } else if (i == 17) {
         this.$http({
           url: api,
           method: "get"
@@ -331,8 +316,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==18){
+      } else if (i == 18) {
         this.$http({
           url: api,
           method: "get"
@@ -346,8 +330,7 @@ export default {
             }
           });
         });
-      }
-       else if(i==19){
+      } else if (i == 19) {
         this.$http({
           url: api,
           method: "get"
@@ -361,8 +344,7 @@ export default {
             }
           });
         });
-      }
-      else if(i==20){
+      } else if (i == 20) {
         this.$http({
           url: api,
           method: "get"
@@ -382,6 +364,29 @@ export default {
 };
 </script>
 <style scoped>
+#nav1 {
+  width: 100%;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  background-color: #3190e8;
+  color: white;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  text-align: center;
+  overflow: hidden;
+}
+#nav1 img {
+  width: 0.1rem;
+  float: left;
+  padding: 0.12rem;
+}
+#nav1 span {
+  font-size: 0.2rem;
+  margin-right: 0.1 rem;
+}
 #conter {
   margin-top: 0.4rem;
   background-color: #fff;
@@ -426,7 +431,6 @@ li {
   float: right;
 }
 #conter::-webkit-scrollbar {
-    display: none;
-  }
-  
+  display: none;
+}
 </style>

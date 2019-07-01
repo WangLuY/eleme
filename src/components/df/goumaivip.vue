@@ -11,12 +11,14 @@
     <p>选择支付方式</p>
     <div id="conter">
       <div>
-        <img src="../img/zhifubao.png" alt>
-        <p @click="value=!value" :class="value?styB:styA" class="el-icon-success"></p>
+        <img class="icon1" src="../img/zhifubao.png" alt>
+        <img v-if="show1" @click="show1=!show1" class="icon" src="../img/icon-test.png" alt="">
+        <img v-else @click="show1=!show1" class="icon" src="../img/icon-test2.png" alt="">
       </div>
       <div>
-        <img src="../img/weixin1.png" alt>
-        <p @click="value=!value" :class="value?styA:styB" class="el-icon-success"></p>
+        <img  class="icon1" src="../img/weixin1.png" alt>
+        <img v-if="!show1" @click="show1=!show1" class="icon" src="../img/icon-test.png" alt="">
+        <img v-else @click="show1=!show1" class="icon" src="../img/icon-test2.png" alt="">
       </div>
     </div>
     <el-button @click="tishi()" id="but" type="success">确认支付</el-button>
@@ -37,10 +39,9 @@ export default {
     return {
       minutes: 15,
       seconds: 0,
-      styA:"one",
-      styB:"two",
       value:true,
-      show:false
+      show:false,
+      show1:true
     };
   },
   mounted() {
@@ -127,20 +128,15 @@ export default {
   overflow: hidden;
   border: 1px solid #e4e4e4;
 }
-#conter img {
+.icon1 {
   width: 0.5rem;
   float: left;
 }
-.el-icon-success {
+.icon {
+  width: 0.3rem;
   float: right;
   line-height: 0.5rem;
   font-size: 0.3rem;
-}
-.one{
-    color: #999999;
-}
-.two{
-  color: #4CD964;
 }
 #but{
     width: 95%;

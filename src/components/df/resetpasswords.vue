@@ -139,7 +139,7 @@ input {
 #deng {
   height: 0.4rem;
   width: 94%;
-  margin: 3%;
+  margin:3%;
   border-radius: 5px;
   background-color: #4cd964;
   border: transparent;

@@ -10,7 +10,7 @@
           <p>当前余额</p>
           <router-link to="/balexplain">
             <div>
-              <i class="el-icon-question"></i>
+              <img id="wen" src="../img/wenhao.png" alt="">
               <span>余额说明</span>
             </div>
           </router-link>
@@ -82,5 +82,8 @@ export default {
 }
 #bot-bot {
   text-align: center;
+}
+#wen{
+  width: 0.11rem;
 }
 </style>

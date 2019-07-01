@@ -10,7 +10,7 @@
           <p>当前积分</p>
           <router-link to="/jfwenti">
             <div>
-              <i class="el-icon-question"></i>
+              <img id="wen" src="../img/wenhao.png" alt="">
               <span>积分说明</span>
             </div>
           </router-link>
@@ -48,6 +48,9 @@ export default {
 }
 </script>
 <style scoped>
+#wen{
+  width: 0.11rem;
+}
 #conter {
   background-color: #3190e8;
   padding: 0.1rem;
