@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>推荐有奖</span>
+      <div></div>
     </div>
     <img id="imgs" src="../img/activity.png" alt>
     <div id="content">

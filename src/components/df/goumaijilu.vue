@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>购买记录</span>
+      <div></div>
     </div>
     <div id="content">
       <div id="conter">

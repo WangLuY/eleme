@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>{{one||two||three||four||five||six||seven||eight||nine||ten||eleven||twelve||thirteen||fourteen||fifteen||sixteen||seventeen||eighteen||nineteen||twenty||twentyOne}}</span>
+      <div></div>
     </div>
     <div id="content">
       <h4>

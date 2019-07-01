@@ -5,6 +5,7 @@
         <img src="../img/左箭头.png" alt>
         </router-link>
         <span>我的优惠</span>
+        <div></div>
       </div>
       <div id="nav-bottom">
         <router-link to="/redpacket">

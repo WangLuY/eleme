@@ -3,6 +3,7 @@
    <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>搜索</span>
+      <div></div>
     </div>
     <!-- 搜索输入框 -->
     <div class="inputFood">

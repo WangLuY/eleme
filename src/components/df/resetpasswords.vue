@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>重置密码</span>
+      <div></div>
     </div>
     <div id="conter">
       <input v-model="username" placeholder="账号" type="text">

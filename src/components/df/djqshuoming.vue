@@ -5,6 +5,7 @@
       <img  src="../img/左箭头.png" alt>
       </router-link>
       <span>代金券说明</span>
+      <div></div>
     </div>
     <div id="content">
       <div>
