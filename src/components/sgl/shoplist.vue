@@ -76,7 +76,7 @@ export default {
       this.$http({
         // https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762&order_by=1
         //latitude="+this.$route.query.latitude+"&longitude="+this.$route.query.longitude+
-        url:"https://elm.cangdu.org/shopping/restaurants?latitude="+this.$store.state.latitude+"&longitude="+this.$store.state.longitude+"&order_by="+this.$store.state.paixuId+"&limit=7",
+        url:"https://elm.cangdu.org/shopping/restaurants?latitude="+this.$store.state.latitude+"&longitude="+this.$store.state.longitude+"&order_by="+this.$store.state.paixuId,
         method: "get",
       }).then(res => {
         this.allShop = res.data;
