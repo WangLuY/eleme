@@ -80,7 +80,7 @@ export default {
 };
 </script>
 
-<style lang="">
+<style scoped>
 #nav span{
   margin-left: 0.5rem !important;
 }
