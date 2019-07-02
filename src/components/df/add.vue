@@ -16,7 +16,7 @@
           <img @click="deleteId(i)" v-if="show" src="../img/quxiao.png" alt />
         </li>
       </ul>
-      <router-link to="/editAddress">
+      <router-link tag="div" to="/editAddress">
         <div id="bottom">
           <p>新增地址</p>
           <img src="../img/iconfontjiantou2.png" alt />

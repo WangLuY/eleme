@@ -1,8 +1,9 @@
 <template>
 <div>
-    <div id="shang">
-      <span class="el-icon-arrow-left jiantouleft" @click="fanhui()"></span>
-      <span id="shangjia">商家详情</span>
+  <div id="nav">
+      <img @click="fanhui()" src="../img/back.png" alt />
+      <span>商家详情</span>
+      <div></div>
     </div>
     <div class="huodong">
       <p>活动与属性</p>
@@ -91,33 +92,8 @@ export default {
 };
 </script>
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-}
-.jiantouleft {
-  font-size: 0.5rem;
-  margin-bottom: 0.1rem;
-}
-#shang {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 3.75rem;
-  background-color: #3190e8;
-  height: 0.7rem;
-  z-index: 10;
-  color: white;
-}
-#shangjia {
-  font-size: 0.2rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .huodong {
-  margin-top: 0.8rem;
+  margin-top: 0.45rem;
   width: 3.65rem;
   background-color: #fff;
   height: 0.5rem;
