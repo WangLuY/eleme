@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt>
+      <img @click="back()" src="../img/back.png" alt>
       <span>购买记录</span>
       <div></div>
     </div>

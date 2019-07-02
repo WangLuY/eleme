@@ -2,7 +2,7 @@
   <div>
       <div id="nav">
         <router-link to="/wode">
-        <img src="../img/左箭头.png" alt>
+        <img src="../img/back.png" alt>
         </router-link>
         <span>我的优惠</span>
         <div></div>

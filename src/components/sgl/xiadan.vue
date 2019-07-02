@@ -25,31 +25,24 @@
       
 
       <!-- 如果用下边（函数注释部分）局部传参方法，则用这两种拼接方式跳转 -->
-      <!-- :to="'shangjiaDetails?shopId'+getId" -->
-      <!-- @click="sentId() -->
 
       <router-link to="shangjiaDetails">
         <img class="xiadanTop9" src="../../assets/jright.png" />
       </router-link>
     </div>
     <div class="xiadanBtn">
-      <!-- 选择栏 -->
-      <!-- <router-link to="/xiadangoods"> <span :style="[{'border-bottom':border1},{'color':color1}]" class="xiadanBtn1" @click="xian1()">商品</span></router-link> -->
       <span
         :style="[{'border-bottom':border1},{'color':color1}]"
         class="xiadanBtn1"
         @click="xian1()"
       >商品</span>
-      <!-- <router-link :to="'/xiadanevaluation?id='+Spadd.id"><span :style="[{'border-bottom':border2},{'color':color2}]" class="xiadanBtn1" @click="xian2()">评价</span></router-link> -->
       <span
         :style="[{'border-bottom':border2},{'color':color2}]"
         class="xiadanBtn1"
         @click="xian2()"
       >评价</span>
     </div>
-    <!-- <div class="router"> -->
     <router-view class="router"></router-view>
-    <!-- </div> -->
   </div>
 </template>
 <script>
@@ -57,7 +50,6 @@ export default {
   name: "xiadan",
   data() {
     return {
-    //   Spadd: {},
       getId: "",
       data: {},
       show: false,
@@ -68,71 +60,57 @@ export default {
     };
   },
   created() {
-    // this.getSpadd();
     this.getLastid();
   },
   computed: {
-      Spadd(){
-          return  this.$store.state.QJ
-      }
-  },
-  methods: {
-    // getSpadd() {
-    //   this.Spadd = this.$store.state.QJ;
-    //   console.log(this.Spadd);
-    // },
-    fanhui() {
-      this.$router.push("family");
-    },
-    getLastid() {
-      this.getId = this.$route.query.shopId;
-      console.log(this.getId);
-      this.getHttp();
-    },
-    getHttp(){
-      const api = "https://elm.cangdu.org/shopping/restaurant/" + this.$store.state.selfId;
-      this.$http({
-        url: api,
-        method: "get"
-      }).then(res => {
-        this.data = res.data;
-        console.log(this.data);
-        this.show = true;
-      });
-    },
-      xian1() {
-      this.border1 = "3px solid blue";
-      this.border2 = "none";
-      this.color1 = "blue";
-      this.color2 = "";
-      this.$router.push({
-        // name: "xiadangoods"
-        name: "test"
-      });
-    },
-    xian2() {
-      this.border1 = "";
-      this.border2 = "3px solid blue";
-      this.color1 = "";
-      this.color2 = "blue";
-      this.$router.push({
-        name: "xiadanevaluation"
-      });
+    Spadd() {
+      return this.$store.state.QJ;
     }
-
-    // 局部传参
-    // 向一个页面传参
-    // sentId(){
-    //     this.$router.push({
-    //         name:'shangjiaDetails',
-    //         query:{
-    //             shopId1:this.getId
-    //         }
-
-    //     })
-    // },
+  },
+    methods: {
+      getSpadd() {
+        this.Spadd = this.$store.state.QJ;
+        console.log(this.Spadd);
+      },
+      fanhui() {
+        this.$router.push("family");
+      },
+      getLastid() {
+        this.getId = this.$route.query.shopId;
+        console.log(this.getId);
+        this.getHttp();
+      },
+      getHttp() {
+        const api = "https://elm.cangdu.org/shopping/restaurant/" + this.getId;
+        this.$http({
+          url: api,
+          method: "get"
+        }).then(res => {
+          this.data = res.data;
+          console.log(this.data);
+          this.show = true;
+        });
+      },
+      xian1() {
+        this.border1 = "3px solid blue";
+        this.border2 = "none";
+        this.color1 = "blue";
+        this.color2 = "";
+        this.$router.push({
+          name: "test"
+        });
+      },
+      xian2() {
+        this.border1 = "";
+        this.border2 = "3px solid blue";
+        this.color1 = "";
+        this.color2 = "blue";
+        this.$router.push({
+          name: "xiadanevaluation"
+        });
       }
-    };
+    }
+};
 </script>
 <style scoped>
 * {
@@ -146,7 +124,6 @@ export default {
   display: inline-block;
   z-index: 11;
   height: 2px;
-  /* border: 1px solid red; */
 }
 .xiadan {
   text-align: left;

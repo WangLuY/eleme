@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt>
+      <img @click="back()" src="../img/back.png" alt>
       <span>{{one||two||three||four||five||six||seven||eight||nine||ten||eleven||twelve||thirteen||fourteen||fifteen||sixteen||seventeen||eighteen||nineteen||twenty||twentyOne}}</span>
       <div></div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div id="duihuan">
     <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt>
+      <img @click="back()" src="../img/back.png" alt>
       <span>兑换会员</span>
       <div></div>
     </div>

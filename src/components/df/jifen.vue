@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt>
+      <img @click="back()" src="../img/back.png" alt>
       <span>我的积分</span>
       <div></div>
     </div>
@@ -90,11 +90,12 @@ export default {
   text-align: center;
 }
 #p1{
+  font-size: 0.18rem；;
     margin-top: 0.1rem;
 }
 #p2{
     margin-top: 0.1rem;
     color: #99a4be;
-    font-size: 0.02rem;
+    font-size: 0.1rem;
 }
 </style>
