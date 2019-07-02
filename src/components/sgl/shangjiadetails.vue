@@ -72,6 +72,7 @@ export default {
     },
     methods: {
          fanhui(){
+            // this.$router.push("xiadan");
             this.$router.back();
         },
         getSpadd(){

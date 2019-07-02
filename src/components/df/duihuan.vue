@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>兑换红包</span>
+      <div></div>
     </div>
     <div id="content">
       <el-input v-model="input" placeholder="请输入兑换码"></el-input>
@@ -127,7 +128,7 @@ export default {
   box-shadow: none;
 }
 #huan {
-  color: greenyellowa;
+  color: cornflowerblue;
 }
 .button {
   width: 100%;

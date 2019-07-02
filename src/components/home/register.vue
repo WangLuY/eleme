@@ -3,16 +3,17 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>密码登录</span>
+      <div></div>
     </div>
     <div id="conter">
       <input v-model="username" placeholder="账号" type="text">
       <div v-if="!value" class="pass">
         <input v-model="password" placeholder="密码" type="text">
-        <p @click="value=!value" class="el-icon-open"></p>
+        <img @click="value=!value" class="imgs" src="../img/QQ截图20190701193134.png" alt="">
       </div>
       <div v-else class="pass">
         <input v-model="password" placeholder="密码" type="password">
-        <p @click="value=!value" class="el-icon-turn-off"></p>
+        <img class="imgs" @click="value=!value" src="../img/QQ截图20190701193202.png" alt="">
       </div>
       <div id="code">
         <input v-model="codeNumber" placeholder="验证码" type="text">
@@ -21,7 +22,7 @@
           <div id="but">
             <button @click="getCode()">看不清</button>
             <br>
-            <button @click="getCode()">换一张</button>
+            <button id="two" @click="getCode()">换一张</button>
           </div>
         </div>
       </div>
@@ -111,6 +112,9 @@ export default {
 };
 </script>
 <style scoped>
+#two{
+  color: #3b95e9;
+}
 #conter {
   margin-top: 0.5rem;
 }
@@ -182,10 +186,11 @@ position: relative;
   top: 0.1rem;
   font-size: 0.2rem;
 }
-.el-icon-open{
-  color: blue;
-}
-.el-icon-turn-off{
-  color: #4cd964;
+.imgs{
+  width: 0.5rem;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  border-radius: 9px;
 }
 </style>

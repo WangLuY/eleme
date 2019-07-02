@@ -15,5 +15,8 @@ export default {
    //排序方式的id值
    paixuId:"",
    //定位界面传输的对象
-   dingwei:{}
+   dingwei:{},
+   obj:[],
+   totalprice:0,
+   shopID:0,
   }

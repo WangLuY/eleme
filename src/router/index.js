@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from '@/components/home'
 import Citylist from '@/components/home/citylist'
 import Register from '@/components/home/register'
-// import Dingwei from '@/components/home/dingwei'
 import Resetpasswords from '@/components/df/resetpasswords'
 import Landing from '@/components/sgl/landing'
 import Citysearch from '@/components/sgl/citysearch'
@@ -54,7 +53,7 @@ import Shangjialist from '@/components/wly/shangjialist'
 import Shoplist from '@/components/sgl/shoplist'
 import FindFood from '@/components/wly/findFood'
 import FindHistory from '@/components/wly/findHistory'
-
+import test from '@/components/sgl/test'
 
 
 Vue.use(Router)
@@ -86,11 +85,6 @@ export default new Router({
       name: 'resetpasswords',
       component: Resetpasswords
     },
-    // {
-    //   path: '/dingwei',
-    //   name: 'dingwei',
-    //   component: Dingwei
-    // },
     {
       path: '/dingdan',
       name: 'dingdan',
@@ -120,12 +114,18 @@ export default new Router({
       path: '/xiadan',
       name: 'xiadan',
       component: Xiadan,
-      redirect:'/xiadangoods',
+      // redirect:'/xiadangoods',
+      redirect:'/test',
       children:[
+        // {
+        //   path: '/xiadangoods',
+        //   name: 'xiadangoods',
+        //   component: Xiadangoods,
+        // },
         {
-          path: '/xiadangoods',
-          name: 'xiadangoods',
-          component: Xiadangoods,
+          path: '/test',
+          name: 'test',
+          component: test,
         },
         {
           path: '/xiadanevaluation',

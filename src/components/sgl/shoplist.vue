@@ -8,8 +8,9 @@
       <img src="" alt>
       <span>附近商家</span>
       <ul>
-        <li v-for="(item, index) in allShop" :key="index" class="shoplist">
-          <router-link :to="'xiadangoods?shopId='+item.id" id="shop">
+        <li v-for="(item, index) in allShop" :key="index" class="shoplist" @click="addA(item)">
+          <!-- <router-link :to="'xiadangoods?shopId='+item.id" id="shop"> -->
+            <router-link :to="'xiadan?shopId='+item.id" id="shop">
             <img :src="'https://elm.cangdu.org/img/'+item.image_path" id="shopImg">
             <p id="shopname">
               <span>品牌</span>
@@ -61,7 +62,16 @@ export default {
     fanhui() {
       this.$router.back();
     },
-    
+     addA(v) {
+      console.log(v);
+      this.$store.commit("QjSjXq", v);
+      this.$store.commit("cunId", v.id);
+      this.$store.commit("getcanguanId", v.id);
+       this.$router.push({
+        name: "xiadan"
+      });
+      
+    },
     getDetail() {
       this.$http({
         url:"https://elm.cangdu.org/v2/pois/"+this.$route.query.latitude+","+this.$route.query.longitude,

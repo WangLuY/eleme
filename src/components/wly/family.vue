@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="family">
     <div class="citysearchTop">
       <img src="./imgs/foot/back.png" @click="back()" alt />
       <p>{{$store.state.dingwei.name}}</p>
@@ -101,6 +101,9 @@ export default {
 };
 </script>
 <style scoped>
+#family{
+  margin-bottom: 0.7rem;
+}
 .change_botton {
   position: fixed;
   bottom: 0;

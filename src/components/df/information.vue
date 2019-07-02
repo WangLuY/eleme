@@ -5,6 +5,7 @@
       <img src="../img/左箭头.png" alt>
       </router-link>
       <span>账户信息</span>
+      <div></div>
     </div>
     <div id="content">
       <div id="headportrait">

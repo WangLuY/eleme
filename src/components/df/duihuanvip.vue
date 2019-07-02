@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>兑换会员</span>
+      <div></div>
     </div>
     <p>
       成功兑换后将关联到当前帐号:

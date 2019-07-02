@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>订单</span>
+      <div></div>
     </div>
     <div id="menu">
       <div>

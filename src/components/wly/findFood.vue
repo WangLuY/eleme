@@ -1,10 +1,9 @@
 <template>
   <div id="findFood">
-    <div class="top">
-      <p class="top_t">
-        <img @click="back()" src="./imgs/foot/back.png" alt />
-        <span>搜索</span>
-      </p>
+   <div id="nav">
+      <img @click="back()" src="../img/左箭头.png" alt>
+      <span>搜索</span>
+      <div></div>
     </div>
     <!-- 搜索输入框 -->
     <div class="inputFood">
@@ -54,9 +53,7 @@
         <img src="../img/SSS.png" alt />
         <p>外卖</p>
       </router-link>
-      <!-- <div>
-        
-      </div>-->
+
       <div>
         <img src="../img/zhinanzhen1.png" alt />
         <p>搜索</p>
@@ -212,30 +209,8 @@ export default {
 </script>
 
 <style scoped>
-.top {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  line-height: 0.5rem;
-  text-align: center;
-  background-color: #f2f2f2;
-}
-.top_t {
-  background-color: #3190e8;
-  font-size: 0.2rem;
-}
-.top_t > img {
-  position: absolute;
-  left: 0;
-  width: 0.5rem;
-}
-.top_t > span {
-  color: #fff;
-}
 .inputFood {
-  margin: 0.7rem 0.2rem 0.1rem;
+  margin: 0.5rem 0.2rem 0.1rem;
 }
 .inputFood > input {
   box-sizing: border-box;
@@ -244,7 +219,7 @@ export default {
   font-size: 0.12rem;
   font-weight: bold;
   height: 0.3rem;
-  background-color: #fff;
+  background-color: white;
   border-radius: 0.02rem;
 }
 .inputFood > span {

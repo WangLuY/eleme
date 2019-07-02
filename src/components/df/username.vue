@@ -5,6 +5,7 @@
     <div id="nav">
       <img src="../img/左箭头.png" alt @click="goBack()">
       <span>修改用户名</span>
+      <div></div>
     </div>
     <!-- 中间输入框跟确认按钮 -->
     <div id="change_bottom">

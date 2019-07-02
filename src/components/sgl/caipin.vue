@@ -1,7 +1,7 @@
 <template>
     <div>
           <div class="top">
-               <img src="../../assets/back.png" alt="" class="zuojiantou" @click="back()">
+               <img src="../../assets/back.png" alt="" class="zuojiantou" @click="fanhui()">
                <span>{{name}}</span>
           </div>
           <p class="datu">
@@ -75,8 +75,9 @@ export default {
           this.tudizhi=this.$route.query.tupian;
     },
     methods: {
-         back(){
-             this.$router.back();
+         fanhui(){
+          //    this.$router.push("xiadan");
+          this.$router.back()
          }
     },
 }
@@ -87,6 +88,7 @@ export default {
     }
      .top{
           width: 3.75rem;
+          height: 0.5rem;
           background-color: #3190e8;
           position: relative;
           top: 0;
@@ -96,10 +98,15 @@ export default {
      }
      .zuojiantou{
           width: 0.2rem;
+          position: absolute;
+          left: 0;
+          top: 0;
+          margin-top: 0.1rem;
+          margin-left: 0.1rem;
           /* border: 1px solid red */
      }
      .top>span{
-          /* display: inline-block; */
+          display: inline-block; 
           /* margin-top: 0.21rem;  */
           position:absolute;
           top:50%;

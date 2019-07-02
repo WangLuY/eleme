@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>重置密码</span>
+      <div></div>
     </div>
     <div id="conter">
       <input v-model="username" placeholder="账号" type="text">
@@ -16,7 +17,7 @@
           <div id="but">
             <button @click="getCode()">看不清</button>
             <br>
-            <button @click="getCode()">换一张</button>
+            <button id="two" @click="getCode()">换一张</button>
           </div>
         </div>
       </div>
@@ -97,6 +98,9 @@ export default {
 };
 </script>
 <style scoped>
+#two{
+  color: #3b95e9;
+}
 #conter {
   margin-top: 0.5rem;
 }
