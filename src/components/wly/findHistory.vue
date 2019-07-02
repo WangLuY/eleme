@@ -66,7 +66,7 @@ export default {
 .inputList{
     padding: 0.1rem ;
     overflow: hidden;
-     background-color: #fff;
+     background-color: #fff ;
     border-bottom:1px solid #e4e4e4;
 }
 .inputList>span:nth-child(1){
