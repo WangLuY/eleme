@@ -71,6 +71,7 @@ export default {
 }
 #top div {
   float: right;
+   color: #3190e8;
 }
 #bottom > p {
   color: #99a4be;

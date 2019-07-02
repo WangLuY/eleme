@@ -4,7 +4,7 @@
         <ul>
             <li v-for="(v,i) in After" :key="i" class="inputList">
                 <span>{{v}}</span>
-                <span @click="delMsg(i)">删除</span>
+                <img @click="delMsg(i)" src="../img/quxiao.png" alt="">
             </li>
             
         </ul> 
@@ -44,41 +44,36 @@ export default {
             
         },
         delAll(){
-            // for (let index = 0;  index< this.After.length; index++) {
-            //     this.After.pop();
-            // }
             this.After=null;
             localStorage.removeItem("food");
         },
         delMsg(i){
             this.After.splice(i,1);
-            // for (let index = 0; index < this.After.length; index++) {
-            //     this.localStr+=this.After[i]+",";
-            // }
-            // localStorage.food=this.localStr;
         }
     },
 }
 </script>
 
-<style lang="">
+<style scoped>
 .inputList{
-    margin: 0.1rem 0;
+    padding: 0.1rem ;
     overflow: hidden;
+     background-color: #fff;
+    border-bottom:1px solid #e4e4e4;
 }
 .inputList>span:nth-child(1){
     float: left;
 }
-.inputList>span:nth-child(2){
+li img{
     float:right;
 }
 .history{
-    padding: 0.2rem;
+    background-color: #fff;
 }
 .history_p{
     background-color: #F5F5F5;
     /* padding: 0.01rem; */
-    margin: 0.2rem 0;
+    padding: 0.1rem ;
     /* font-size: 0.02rem; */
     color: #666666;
 }
@@ -87,5 +82,6 @@ export default {
     width: 100%;
     font-size: 0.15rem;
     color: #4C8DE0;
+    padding: 0.1rem 0;
 }
 </style>

@@ -24,7 +24,7 @@
                 {{v.recent_order_num}}
                 <span v-if="v.recent_order_num">单</span>
               </p>
-              <p class="lip3">w
+              <p class="lip3">
                 {{v.float_minimum_order_amount}}
                 <span v-if="v.float_minimum_order_amount">元 起送 / 距离</span>
                 {{v.distance}}
@@ -165,7 +165,9 @@ export default {
   color: #fff;
 }
 .inputFood {
-  margin: 0.5rem 0.2rem 0.1rem;
+  padding: 0.5rem 0.2rem 0.1rem;
+  background-color: white !important;
+  overflow: hidden;
 }
 .inputFood > input {
   box-sizing: border-box;
@@ -174,7 +176,7 @@ export default {
   font-size: 0.12rem;
   font-weight: bold;
   height: 0.3rem;
-  background-color: white;
+  background-color: #e4e4e4;
   border-radius: 0.02rem;
 }
 .inputFood > span {

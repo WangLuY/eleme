@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="history">
     <p>搜索历史</p>
     <div>
       <ul class="resultlist" v-if="showClear">
@@ -84,16 +84,29 @@ export default {
 </script>
 
 <style scoped>
+#history>p{
+  padding: 0.05rem;
+}
 .clear {
   width: 100%;
   height: 0.4rem;
   font-size: 0.15rem;
-  background-color: #3190e8;
+  background-color: #fff;
+  border: 1px solid #fff;
+} 
+ul{
+  border-top:1px solid #e4e4e4e4; 
+}
+.resultlist li{
+  background-color: white;
+  padding: 0.1rem;
+  border-bottom:1px solid #e4e4e4e4; 
 }
 .res_1 {
   font-size: 0.15rem;
 }
 .res_2 {
   font-size: 0.1rem !important;
+  margin-top:0.05rem; 
 }
 </style>

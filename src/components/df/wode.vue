@@ -3,29 +3,29 @@
     <div id="nav-top">
       <div id="nav">
         <router-link to="/citylist">
-          <img src="../img/左箭头.png" alt>
+          <img src="../img/左箭头.png" alt />
         </router-link>
         <span>我的</span>
         <div></div>
       </div>
       <div id="nav-bottom">
         <div id="img">
-          <img :src="img1||'https://elm.cangdu.org/img/'+res.data.avatar" alt>
+          <img :src="img1||'https://elm.cangdu.org/img/'+res.data.avatar" alt />
         </div>
         <div @click="getters()" id="username">
           <div id="user">{{user||zhuze}}</div>
           <div id="phone">
-            <img src="../img/1.png" alt>
+            <img src="../img/1.png" alt />
             <p>暂无绑定手机号</p>
           </div>
         </div>
         <router-link to="/information">
-          <img id="you" src="../img/右箭头.png" alt>
+          <img id="you" src="../img/右箭头.png" alt />
         </router-link>
       </div>
     </div>
     <div id="conter">
-      <router-link to="/balance">
+      <router-link tag="div" to="/balance">
         <div class="wo">
           <p>
             <span class="num1">{{balance}}</span>元
@@ -33,7 +33,7 @@
           <p class="content">我的余额</p>
         </div>
       </router-link>
-      <router-link to="/discounts">
+      <router-link tag="div" to="/discounts">
         <div class="wo" id="discounts">
           <p>
             <span class="num2">{{$store.state.sum}}</span>个
@@ -41,7 +41,7 @@
           <p class="content">我的优惠</p>
         </div>
       </router-link>
-      <router-link to="/jifen">
+      <router-link tag="div" to="/jifen">
         <div class="wo">
           <p>
             <span class="num3">{{integral}}</span>分
@@ -51,25 +51,25 @@
       </router-link>
     </div>
     <div id="bot-top">
-      <div class="menu">
-        <img class="logo" src="../img/dingdan.png" alt="">
-        <span>我的订单</span>
-        <router-link to="/dingdan">
-          <img class="yjt" src="../img/iconfontjiantou2.png" alt>
-        </router-link>
-      </div>
-      <router-link to="/jifensc">
+      <router-link tag="div" to="/dingdan">
         <div class="menu">
-          <img class="logo" src="../img/dangao.png" alt="">
-          <span>积分商城</span>
-          <img class="yjt" src="../img/iconfontjiantou2.png" alt>
+          <img class="logo" src="../img/dingdan.png" alt />
+          <span>我的订单</span>
+          <img class="yjt" src="../img/iconfontjiantou2.png" alt />
         </div>
       </router-link>
-      <router-link to="/huiyuanzhongxin">
+      <router-link tag="div" to="/jifensc">
         <div class="menu">
-          <img class="logo" src="../img/huangguan.png" alt>
+          <img class="logo" src="../img/dangao.png" alt />
+          <span>积分商城</span>
+          <img class="yjt" src="../img/iconfontjiantou2.png" alt />
+        </div>
+      </router-link>
+      <router-link tag="div" to="/huiyuanzhongxin">
+        <div class="menu">
+          <img class="logo" src="../img/huangguan.png" alt />
           <span>饿了么会员卡</span>
-          <img class="yjt" src="../img/iconfontjiantou2.png" alt>
+          <img class="yjt" src="../img/iconfontjiantou2.png" alt />
         </div>
       </router-link>
     </div>
@@ -78,32 +78,32 @@
         <div class="divs"></div>
         <span>服务中心</span>
         <router-link to="/fuwuzhongxin">
-          <img class="yjt" src="../img/iconfontjiantou2.png" alt>
+          <img class="yjt" src="../img/iconfontjiantou2.png" alt />
         </router-link>
       </div>
-      <router-link to="/download">
+      <router-link tag="div" to="/download">
         <div class="menu">
-          <img class="logo" src="../img/eliaomo.png" alt="">
+          <img class="logo" src="../img/eliaomo.png" alt />
           <span>下载饿了么App</span>
-          <img class="yjt" src="../img/iconfontjiantou2.png" alt>
+          <img class="yjt" src="../img/iconfontjiantou2.png" alt />
         </div>
       </router-link>
     </div>
     <div id="menu">
       <div>
-        <img @click="login1()" src="../img/SSS.png" alt>
+        <img @click="login1()" src="../img/SSS.png" alt />
         <p>外卖</p>
       </div>
       <div>
-        <img @click="login2()" src="../img/zhinanzhen.png" alt>
+        <img @click="login2()" src="../img/zhinanzhen.png" alt />
         <p>搜索</p>
       </div>
       <div>
-        <img @click="login3()" src="../img/dingdan1.png" alt>
+        <img @click="login3()" src="../img/dingdan1.png" alt />
         <p>订单</p>
       </div>
       <div>
-        <img src="../img/touxiang1.png" alt>
+        <img src="../img/touxiang1.png" alt />
         <p>我的</p>
       </div>
     </div>
@@ -121,19 +121,19 @@ export default {
     };
   },
   created() {
-    (this.user = this.$store.state.userMsg.username);
-    (this.img1 = this.$store.state.imagavater);
+    this.user = this.$store.state.userMsg.username;
+    this.img1 = this.$store.state.imagavater;
     this.getImg();
   },
   methods: {
-    getImg(){
-      const api = "https://elm.cangdu.org/v1/user/"+this.$store.state.userMsg.user_id;
+    getImg() {
+      const api =
+        "https://elm.cangdu.org/v1/user/" + this.$store.state.userMsg.user_id;
       this.$http({
         url: api,
-        method: "get",
+        method: "get"
       }).then(res => {
-        this.img1="https://elm.cangdu.org/img/"+res.data.avatar;
-;
+        this.img1 = "https://elm.cangdu.org/img/" + res.data.avatar;
       });
     },
     back() {
