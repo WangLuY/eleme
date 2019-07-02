@@ -68,28 +68,6 @@ export default {
       return this.$store.state.QJ;
     }
   },
-  methods: {
-    fanhui() {
-      this.$router.push("family");
-    },
-    getLastid() {
-      this.getId = this.$route.query.shopId;
-      console.log(this.getId);
-      this.getHttp();
-    },
-    getHttp() {
-      const api =
-        "https://elm.cangdu.org/shopping/restaurant/" +
-        this.$store.state.selfId;
-      this.$http({
-        url: api,
-        method: "get"
-      }).then(res => {
-        this.data = res.data;
-        console.log(this.data);
-        this.show = true;
-      });
-    },
     methods: {
       getSpadd() {
         this.Spadd = this.$store.state.QJ;
@@ -133,7 +111,6 @@ export default {
         });
       }
     }
-  }
 };
 </script>
 <style scoped>
@@ -165,6 +142,7 @@ export default {
 .xiadanTop0 {
   filter: blur(16px);
   -webkit-background-color: rgba(0, 0, 0, 0.9);
+  margin: 0
 }
 .xiadanTop1 {
   width: 0.12rem;
