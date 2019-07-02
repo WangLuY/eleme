@@ -2,7 +2,7 @@
     <div class="history">
         <p class="history_p">搜索历史</p>
         <ul>
-            <li v-for="(v,i) in After" :key="i" class="inputList">
+            <li v-for="(v,i) in After" :key="i" class="inputList" @click="interFood(v)">
                 <span>{{v}}</span>
                 <span @click="delMsg(i)">删除</span>
             </li>
@@ -40,7 +40,7 @@ export default {
                 this.After.push(this.foodArr[i]);
                 }
             }
-            console.log(this.After.length);
+            // console.log(this.After.length);
             
         },
         delAll(){
@@ -56,6 +56,10 @@ export default {
             //     this.localStr+=this.After[i]+",";
             // }
             // localStorage.food=this.localStr;
+        },
+        interFood(v){
+            console.log(v);
+            this.inputFood=v;
         }
     },
 }

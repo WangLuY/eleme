@@ -3,7 +3,7 @@
     <p>搜索历史</p>
     <div>
       <ul class="resultlist" v-if="showClear">
-        <li v-for="(v,i) in arrNameAf" :key="i">
+        <li v-for="(v,i) in arrNameAf" :key="i" @click="hisDingwei(v)">
           <router-link
             v-model="arrNameAf"
             :to="'/family?name='+v+'&address='+arrAddrAf[i]+'&latitude='+arrLaAf[i]+'&longitude='+arrLoAf[i]"
@@ -37,7 +37,8 @@ export default {
       arrLaAf: [],
       arrLoAf: [],
 
-      historyObj: {},
+      historyObj:[]
+      ,
       showClear: true
     };
   },
