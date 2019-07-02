@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>我的余额</span>
+      <div></div>
     </div>
     <div id="conter">
       <div id="content">

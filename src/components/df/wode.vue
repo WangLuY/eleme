@@ -6,6 +6,7 @@
           <img src="../img/左箭头.png" alt>
         </router-link>
         <span>我的</span>
+        <div></div>
       </div>
       <div id="nav-bottom">
         <div id="img">

@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>会员中心</span>
+      <div></div>
     </div>
     <p>
       为用户

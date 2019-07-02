@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>历史红包</span>
+      <div></div>
     </div>
     <div id="content">
       <ul>

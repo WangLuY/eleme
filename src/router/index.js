@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from '@/components/home'
 import Citylist from '@/components/home/citylist'
 import Register from '@/components/home/register'
-// import Dingwei from '@/components/home/dingwei'
 import Resetpasswords from '@/components/df/resetpasswords'
 import Landing from '@/components/sgl/landing'
 import Citysearch from '@/components/sgl/citysearch'
@@ -86,11 +85,6 @@ export default new Router({
       name: 'resetpasswords',
       component: Resetpasswords
     },
-    // {
-    //   path: '/dingwei',
-    //   name: 'dingwei',
-    //   component: Dingwei
-    // },
     {
       path: '/dingdan',
       name: 'dingdan',

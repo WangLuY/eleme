@@ -4,34 +4,32 @@
     line-height: 0.4rem;
     background-color: #3190e8;
     color: white;
-    overflow: hidden;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 3;
-    text-align: center;
-    overflow: hidden;
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 0.12rem;
+  box-sizing:border-box;
   }
   #nav img {
     width: 0.1rem;
-    float: left;
-    padding: 0.12rem;
+    padding: 0.12rem 0;
   }
   #nav span {
     font-size: 0.2rem;
     margin-right: 0.1 rem;
   }
   .nav-right {
-    float: right;
-    font-size: 0.18rem;
+    font-size: 0.15rem;
     color: white;
-    margin-right: 0.2rem;
   }
   #ele {
-    float: left;
     color: white;
     font-size: 0.18rem;
-    /* padding: 0.2rem; */
   }
   #menu {
     width: 100%;

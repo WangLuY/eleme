@@ -3,6 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt>
       <span>在线支付</span>
+      <div></div>
     </div>
     <div id="top">
       <p>支付剩余时间</p>

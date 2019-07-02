@@ -99,6 +99,7 @@ export default {
         this.show = true;
       });
     },
+<<<<<<< HEAD
     xian1() {
       this.border1 = "3px solid blue";
       this.border2 = "none";
@@ -118,6 +119,52 @@ export default {
         name: "xiadanevaluation"
       });
     }
+=======
+    methods: {
+         getSpadd(){
+            this.Spadd=this.$store.state.QJ;
+            console.log(this.Spadd);
+        },
+        fanhui() {
+        this.$router.push("family");
+        },
+        getLastid(){
+             this.getId=this.$route.query.shopId;
+            console.log(this.getId);
+            this.getHttp();
+        },
+        getHttp(){
+            const api ='https://elm.cangdu.org/shopping/restaurant/'+this.getId;
+            this.$http(
+                {
+                    url:api,
+                    method:'get'
+                }
+            ).then(res=>{
+                this.data=res.data;
+                console.log(this.data)
+                this.show = true;
+            })
+        },
+        xian1(){
+            this.border1="3px solid blue";
+            this.border2='none';
+            this.color1="blue";
+            this.color2='';
+            this.$router.push({
+                name:'xiadangoods'
+            })
+        },
+         xian2(){
+            this.border1="";
+            this.border2='3px solid blue';
+            this.color1="";
+            this.color2='blue';
+             this.$router.push({
+                name:'xiadanevaluation'
+            })
+        },
+>>>>>>> fd190f5f251a71dc1439342bce2a206e3a0dfded
 
     // 局部传参
     // 向一个页面传参

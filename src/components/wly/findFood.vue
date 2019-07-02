@@ -1,10 +1,9 @@
 <template>
   <div id="findFood">
-    <div class="top">
-      <p class="top_t">
-        <img @click="back()" src="./imgs/foot/back.png" alt>
-        <span>搜索</span>
-      </p>
+   <div id="nav">
+      <img @click="back()" src="../img/左箭头.png" alt>
+      <span>搜索</span>
+      <div></div>
     </div>
     <!-- 搜索输入框 -->
     <div class="inputFood">
@@ -35,22 +34,6 @@
         </li>
       </ul>
     </div>
-    <!-- 搜索内容 -->
-    <!-- <div>
-      <div class="foodResult" v-if="showResult">
-        <ul class="resultlist">
-          <p>搜索结果</p>
-          <li v-for="(v,i) in foodList" :key="i">
-            <router-link
-              :to="'/family?name='+v.name+'&address='+v.address+'&latitude='+v.latitude+'&longitude='+v.longitude"
-              teag="div"
-            >
-              <p>{{v.name}}</p>
-              <p>{{v.address}}</p>
-            </router-link>
-          </li>
-        </ul>
-      </div> -->
       <!-- 搜索历史 -->
       <router-view v-show="showHistory"></router-view>
       <div id="menu">
@@ -58,9 +41,6 @@
         <img  src="../img/SSS.png" alt />
         <p>外卖</p>
       </router-link>
-      <!-- <div>
-        
-      </div> -->
       <div>
         <img src="../img/zhinanzhen1.png" alt />
         <p>搜索</p>
@@ -69,19 +49,12 @@
          <img  src="../img/dingdan1.png" alt />
          <p>订单</p>
       </router-link>
-      <!-- <div>
-       
-      </div> -->
        <router-link to="/wode" tag="div">
           <img src="../img/touxiang2.png" alt />
         <p>我的</p>
       </router-link>
-      <!-- <div>
-       
-      </div> -->
     </div>
     </div>
-    <!-- 搜索结果 -->
 </template>
 
 <script>
@@ -162,7 +135,6 @@ export default {
       if (val == "") {
         this.showHistory = true;
         this.showResult = false;
-        // this.showResult = !this.showResult;
       }
     }
   }
@@ -193,7 +165,7 @@ export default {
   color: #fff;
 }
 .inputFood {
-  margin: 0.7rem 0.2rem 0.1rem;
+  margin: 0.5rem 0.2rem 0.1rem;
 }
 .inputFood > input {
   box-sizing: border-box;
@@ -202,7 +174,7 @@ export default {
   font-size: 0.12rem;
   font-weight: bold;
   height: 0.3rem;
-  background-color: #fff;
+  background-color: white;
   border-radius: 0.02rem;
 }
 .inputFood > span {
