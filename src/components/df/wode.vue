@@ -3,7 +3,7 @@
     <div id="nav-top">
       <div id="nav">
         <router-link to="/citylist">
-          <img src="../img/左箭头.png" alt />
+          <img src="../img/back.png" alt />
         </router-link>
         <span>我的</span>
         <div></div>

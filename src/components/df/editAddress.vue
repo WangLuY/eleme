@@ -2,7 +2,7 @@
   <div>
     <div id="nav">
       <router-link to="/add">
-        <img src="../img/左箭头.png" alt>
+        <img src="../img/back.png" alt>
       </router-link>
       <span>新增地址</span>
       <div></div>

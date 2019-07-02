@@ -1,7 +1,7 @@
 <template>
   <div id="register">
     <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt>
+      <img @click="back()" src="../img/back.png" alt>
       <span>密码登录</span>
       <div></div>
     </div>
