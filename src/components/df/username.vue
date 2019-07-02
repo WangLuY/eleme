@@ -3,7 +3,7 @@
   <div id="bc">
     <!-- 头部 -->
     <div id="nav">
-      <img src="../img/左箭头.png" alt @click="goBack()">
+      <img src="../img/back.png" alt @click="goBack()">
       <span>修改用户名</span>
       <div></div>
     </div>

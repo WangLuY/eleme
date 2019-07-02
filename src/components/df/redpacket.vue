@@ -4,10 +4,10 @@
       <p>
         有<span>{{$store.state.sum}}</span> 个红包即将到期
       </p>
-     <router-link to="/redexplain">
+     <router-link  to="/redexplain">
       <div>
         <img id="wen" src="../img/wenhao.png" alt="">
-        <span>红包说明</span>
+        <span id="red">红包说明</span>
       </div>
      </router-link>
     </div>
@@ -49,15 +49,15 @@
           <div class="cont-right">{{v.description_map.validity_delta}}</div>
         </li>
       </ul>
-       <router-link id="lishi" to="/historyrb">
+       <router-link tag="p" id="lishi" to="/historyrb">
         <p>查看历史红包></p>
        </router-link>
     </div>
     <div id="bottom">
-        <router-link to="/duihuan">
+        <router-link tag="p" to="/duihuan">
         <p>兑换红包</p>
         </router-link>
-        <router-link to="/tuijianyj">
+        <router-link tag="p" to="/tuijianyj">
         <p>推荐有奖</p>
         </router-link>
     </div>
@@ -111,6 +111,9 @@ export default {
 };
 </script>
 <style scoped>
+#red{
+  color: cornflowerblue;
+}
 #wen{
   width: 0.11rem;
 }

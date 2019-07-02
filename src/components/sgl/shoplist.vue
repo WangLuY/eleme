@@ -1,17 +1,15 @@
 <template>
   <div class="first">
-
-
     <!-- 商家店铺 -->
     <!-- 下面商铺部分 -->
     <div to="xiadan" id="allShop">
-      <img src="" alt>
+      <img src alt />
       <span>附近商家</span>
-      <ul>
-        <li v-for="(item, index) in allShop" :key="index" class="shoplist" @click="addA(item)">
+      <ul  @click="yidong1()">
+        <li id="xiask" v-for="(item, index) in allShop" :key="index" class="shoplist" @click="addA(item)">
           <!-- <router-link :to="'xiadangoods?shopId='+item.id" id="shop"> -->
-            <router-link :to="'xiadan?shopId='+item.id" id="shop">
-            <img :src="'https://elm.cangdu.org/img/'+item.image_path" id="shopImg">
+          <router-link :to="'xiadan?shopId='+item.id" id="shop">
+            <img :src="'https://elm.cangdu.org/img/'+item.image_path" id="shopImg" />
             <p id="shopname">
               <span>品牌</span>
               <span>{{item.name}}</span>
@@ -22,8 +20,10 @@
             <p id="shopscore">
               <el-rate v-model="item.rating" disabled show-score text-color="#ff9900"></el-rate>
               <span>月售{{item.recent_order_num}}单</span>
-              <span>{{item.supports[1].name}}</span>
-              <span>{{item.delivery_mode.text}}</span>
+              <span v-if="item.supports.length>1">{{item.supports[1].name}}</span>
+              <span v-if="item.delivery_mode">{{item.delivery_mode.text}}</span>
+              <!-- <span v-if="value.delivery_mode">{{value.delivery_mode.text}}</span> -->
+              <!-- <span v-if="value.supports.length>1">{{value.supports[1].name}}</span> -->
             </p>
             <p id="shopmoney">
               <span>￥{{item.float_minimum_order_amount}}起送/{{item.piecewise_agent_fee.tips}}</span>
@@ -48,6 +48,7 @@ export default {
       datas: {},
       allShop: [],
       detailAdd: {},
+      yidong1: 20
       //获得全局变量中的state的排序Id
       // paixuId:this.$store.state.paixuId
     };
@@ -59,22 +60,36 @@ export default {
     this.getDetail();
   },
   methods: {
+    // 加载更多
+    yidong1() {
+      var con = document.getElementById("xiask");
+      // console.log(1);
+      if (con.scrollTop + con.clientHeight + 50 >= con.scrollHeight) {
+        this.numall = this.numall + 10;
+        // this.x1 = parseFloat(this.x1) + 0.1;
+        // this.y1 = parseFloat(this.y1) + 0.1;
+        this.getnear();
+      }
+    },
     fanhui() {
       this.$router.back();
     },
-     addA(v) {
+    addA(v) {
       console.log(v);
       this.$store.commit("QjSjXq", v);
       this.$store.commit("cunId", v.id);
       this.$store.commit("getcanguanId", v.id);
-       this.$router.push({
+      this.$router.push({
         name: "xiadan"
       });
-      
     },
     getDetail() {
       this.$http({
-        url:"https://elm.cangdu.org/v2/pois/"+this.$route.query.latitude+","+this.$route.query.longitude,
+        url:
+          "https://elm.cangdu.org/v2/pois/" +
+          this.$route.query.latitude +
+          "," +
+          this.$route.query.longitude,
         method: "get",
         withCredentials: true
       }).then(res => {
@@ -86,17 +101,24 @@ export default {
       this.$http({
         // https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762&order_by=1
         //latitude="+this.$route.query.latitude+"&longitude="+this.$route.query.longitude+
-        url:"https://elm.cangdu.org/shopping/restaurants?latitude="+this.$store.state.latitude+"&longitude="+this.$store.state.longitude+"&order_by="+this.$store.state.paixuId,
-        method: "get",
+        url:
+          "https://elm.cangdu.org/shopping/restaurants?latitude=" +
+          this.$store.state.latitude +
+          "&longitude=" +
+          this.$store.state.longitude +
+          "&order_by=" +
+          this.$store.state.paixuId +
+          "&limit=" +
+          this.numall,
+        method: "get"
       }).then(res => {
         this.allShop = res.data;
         // console.log("这是商家的列表");
         // console.log(res.data);
         // console.log("这个是鼠标点击的信息"+this.$store.state.paixuId+","+this.$store.state.latitude+","+this.$store.state.longitude);
-
       });
     }
-  },
+  }
 };
 </script>
 <style scoped>
@@ -141,7 +163,7 @@ export default {
 #shop {
   color: black;
 }
-.shoplist{
+.shoplist {
   height: 0.7rem;
 }
 #shopImg {
@@ -247,5 +269,11 @@ ul li {
   color: blue;
   font-size: 0.83rem;
   text-align: center;
+}
+#xiask {
+  /* overflow: hidden; */
+  /* height: 3rem; */
+  height: 12vh;
+  overflow-y: scroll;
 }
 </style>

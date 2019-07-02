@@ -1,15 +1,17 @@
 <template>
   <div id="fuwuzhongxin">
     <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt />
+      <img @click="back()" src="../img/back.png" alt />
       <span>服务中心</span>
       <div></div>
     </div>
     <div id="conter">
       <div id="top">
         <div id="top-left">
-          <img src="../img/kefu.png" alt />
-          <p>在线客服</p>
+          <a href="tel:10086">
+            <img src="../img/kefu.png" alt />
+            <p>在线客服</p>
+          </a>
         </div>
         <div id="top-right">
           <a href="tel:15716646150">
@@ -387,7 +389,7 @@ export default {
 #top-right {
   text-align: center;
 }
-#top-right a {
+#top a {
   color: black;
 }
 #conter > p {

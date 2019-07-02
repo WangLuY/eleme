@@ -1,7 +1,7 @@
 <template>
   <div id="sousuo">
     <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt>
+      <img @click="back()" src="../img/back.png" alt>
       <span>搜索地址</span>
       <div></div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="nav">
-      <img @click="back()" src="../img/左箭头.png" alt />
+      <img @click="back()" src="../img/back.png" alt />
       <span>{{this.$route.query.name}}</span>
       <router-link tag="p" id="switchover" to="/citylist">
       <div>切换城市</div>

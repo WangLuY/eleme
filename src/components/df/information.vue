@@ -2,7 +2,7 @@
   <div>
     <div id="nav">
       <router-link to="/wode">
-      <img src="../img/左箭头.png" alt>
+      <img src="../img/back.png" alt>
       </router-link>
       <span>账户信息</span>
       <div></div>
