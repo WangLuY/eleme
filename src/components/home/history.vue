@@ -8,7 +8,7 @@
             <p class="res_2">{{v.address}}</p>
           <!-- </router-link> -->
         </li>
-        <p @click="clearHistory()" class="clear">清空历史</p>
+        <p @click="clearHistory()" class="clear">清空所有</p>
       </ul>
     </div>
   </div>
