@@ -356,13 +356,13 @@ export default new Router({
   path:"/findFood",
   name:"findFood",
   component:FindFood,
-  redirect:"/findHistory",
-  children:[
-    {
-      path:"/findHistory",
-      name:"findHistory",
-      component:FindHistory
-    }
-  ]
+  // redirect:"/findHistory",
+  // children:[
+  //   {
+  //     path:"/findHistory",
+  //     name:"findHistory",
+  //     component:FindHistory
+  //   }
+  // ]
 }
 ]})

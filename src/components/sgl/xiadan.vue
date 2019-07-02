@@ -99,25 +99,6 @@ export default {
         this.show = true;
       });
     },
-    xian1() {
-      this.border1 = "3px solid blue";
-      this.border2 = "none";
-      this.color1 = "blue";
-      this.color2 = "";
-      this.$router.push({
-        // name: "xiadangoods"
-        name: "test"
-      });
-    },
-    xian2() {
-      this.border1 = "";
-      this.border2 = "3px solid blue";
-      this.color1 = "";
-      this.color2 = "blue";
-      this.$router.push({
-        name: "xiadanevaluation"
-      });
-    },
     methods: {
          getSpadd(){
             this.Spadd=this.$store.state.QJ;
@@ -144,6 +125,25 @@ export default {
                 this.show = true;
             })
         },
+      xian1() {
+      this.border1 = "3px solid blue";
+      this.border2 = "none";
+      this.color1 = "blue";
+      this.color2 = "";
+      this.$router.push({
+        // name: "xiadangoods"
+        name: "test"
+      });
+    },
+    xian2() {
+      this.border1 = "";
+      this.border2 = "3px solid blue";
+      this.color1 = "";
+      this.color2 = "blue";
+      this.$router.push({
+        name: "xiadanevaluation"
+      });
+    }
 
     // 局部传参
     // 向一个页面传参
@@ -156,7 +156,7 @@ export default {
 
     //     })
     // },
-  }
+      }
   }
 };
 </script>

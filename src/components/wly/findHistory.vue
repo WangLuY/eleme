@@ -2,7 +2,7 @@
     <div class="history">
         <p class="history_p">搜索历史</p>
         <ul>
-            <li v-for="(v,i) in After" :key="i" class="inputList">
+            <li v-for="(v,i) in After" :key="i" class="inputList" @click="interFood(v)">
                 <span>{{v}}</span>
                 <img @click="delMsg(i)" src="../img/quxiao.png" alt="">
             </li>
@@ -40,7 +40,7 @@ export default {
                 this.After.push(this.foodArr[i]);
                 }
             }
-            console.log(this.After.length);
+            // console.log(this.After.length);
             
         },
         delAll(){
@@ -49,6 +49,14 @@ export default {
         },
         delMsg(i){
             this.After.splice(i,1);
+            // for (let index = 0; index < this.After.length; index++) {
+            //     this.localStr+=this.After[i]+",";
+            // }
+            // localStorage.food=this.localStr;
+        },
+        interFood(v){
+            console.log(v);
+            this.inputFood=v;
         }
     },
 }

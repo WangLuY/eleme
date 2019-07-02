@@ -8,7 +8,7 @@
     <!-- 搜索输入框 -->
     <div class="inputFood">
       <!-- <el-input class="inpFood" v-model="inputFood" placeholder="请输入商家或美食名称"></el-input> -->
-      <input v-model="inputFood" type="text" placeholder="请输入商家或美食名称">
+      <input v-model="inputFood" type="text" placeholder="请输入商家或美食名称" />
       <span @click="findFood()">提交</span>
     </div>
 
@@ -16,7 +16,7 @@
       <ul v-if="showResult">
         <li class="li1" :key="i" v-for="(v,i) in foodList">
           <router-link tag="p" :to="'/shop?id='+v.id">
-            <img class="img1" :src="'https://elm.cangdu.org/img/'+v.image_path" alt>
+            <img class="img1" :src="'https://elm.cangdu.org/img/'+v.image_path" alt />
             <div class="bottom1">
               <p class="lip1">{{v.name}}</p>
               <p class="lip2">
@@ -34,30 +34,51 @@
         </li>
       </ul>
     </div>
-      <!-- 搜索历史 -->
-      <router-view v-show="showHistory"></router-view>
-      <div id="menu">
+    <!-- 搜索历史 -->
+    <!-- <router-view v-show="showHistory"></router-view> -->
+    <!-- <FindHistory v-show="showHistory"></FindHistory> -->
+    <div class="history" v-show="showHistory">
+      <p class="history_p">搜索历史</p>
+      <ul>
+        <li v-for="(v,i) in After" :key="i" class="inputList" @click="interFood(v)">
+          <span>{{v}}</span>
+          <span @click="delMsg(i)">删除</span>
+        </li>
+      </ul>
+      <p class="history_clear" @click="delAll()">删除历史记录</p>
+    </div>
+
+    <div id="menu">
       <router-link to="/family" tag="div">
-        <img  src="../img/SSS.png" alt />
+        <img src="../img/SSS.png" alt />
         <p>外卖</p>
       </router-link>
+
       <div>
         <img src="../img/zhinanzhen1.png" alt />
         <p>搜索</p>
       </div>
-       <router-link to="/dingdan" tag="div">
-         <img  src="../img/dingdan1.png" alt />
-         <p>订单</p>
+      <router-link to="/dingdan" tag="div">
+        <img src="../img/dingdan1.png" alt />
+        <p>订单</p>
       </router-link>
-       <router-link to="/wode" tag="div">
-          <img src="../img/touxiang2.png" alt />
+      <!-- <div>
+       
+      </div>-->
+      <router-link to="/wode" tag="div">
+        <img src="../img/touxiang2.png" alt />
         <p>我的</p>
       </router-link>
+      <!-- <div>
+       
+      </div>-->
     </div>
-    </div>
+  </div>
+  <!-- 搜索结果 -->
 </template>
 
 <script>
+import FindHistory from "@/components/wly/findHistory";
 export default {
   name: "findFood",
   data() {
@@ -68,11 +89,18 @@ export default {
       foodList: [],
       //定义布尔类型的值来显示隐藏搜索结果
       showHistory: true,
-      showResult: false
+      showResult: false,
+      //定义一个数组，存储搜索及记录
+      foodArr: [],
+      //定义一个数组，保存去重后
+      After: [],
+      localStr: ""
     };
   },
+  components: { FindHistory },
   created() {
     this.getHis();
+    this.getFindHistory();
   },
   methods: {
     //返回上一级路由
@@ -104,13 +132,14 @@ export default {
         "&keyword=" +
         this.inputFood;
       this.$http.get(api).then(res => {
+        console.log(res.data);
         //当输入框中没有内容时直接返回不作任何操作
         if (this.inputFood == "") {
           return;
         }
         this.showResult = true;
         this.showHistory = false;
-        // this.showHistory=!this.showHistory;
+        //this.showHistory=!this.showHistory;
         //将获取到的对象赋值给foodList
         this.foodList = res.data;
 
@@ -128,6 +157,42 @@ export default {
       } else {
         this.showHistory = false;
       }
+    },
+    //搜索历史的界面
+    //获得本地中food对象
+    getFindHistory() {
+      //返回回来的字符串
+      const foodStr = localStorage.food;
+      //将字符串以 ， 分开，并且存储到数组中
+      this.foodArr = foodStr.split(",");
+      //将数组中的元素去重
+      for (var i = 0; i < this.foodArr.length; i++) {
+        if (this.After.indexOf(this.foodArr[i]) == -1) {
+          this.After.push(this.foodArr[i]);
+        }
+      }
+      // console.log(this.After.length);
+    },
+    delAll() {
+      // for (let index = 0;  index< this.After.length; index++) {
+      //     this.After.pop();
+      // }
+      this.After = null;
+      localStorage.removeItem("food");
+    },
+    delMsg(i) {
+      this.After.splice(i, 1);
+      // for (let index = 0; index < this.After.length; index++) {
+      //     this.localStr+=this.After[i]+",";
+      // }
+      // localStorage.food=this.localStr;
+    },
+    interFood(v) {
+      console.log(v);
+      this.inputFood = v;
+      this.findFood();
+      this.showHistory = false;
+      this.showResult = true;
     }
   },
   watch: {
@@ -135,6 +200,8 @@ export default {
       if (val == "") {
         this.showHistory = true;
         this.showResult = false;
+        // this.showResult = !this.showResult;
+        this.getFindHistory();
       }
     }
   }
@@ -142,28 +209,6 @@ export default {
 </script>
 
 <style scoped>
-.top {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  line-height: 0.5rem;
-  text-align: center;
-  background-color: #f2f2f2;
-}
-.top_t {
-  background-color: #3190e8;
-  font-size: 0.2rem;
-}
-.top_t > img {
-  position: absolute;
-  left: 0;
-  width: 0.5rem;
-}
-.top_t > span {
-  color: #fff;
-}
 .inputFood {
   padding: 0.5rem 0.2rem 0.1rem;
   background-color: white !important;
@@ -191,22 +236,50 @@ export default {
   border-radius: 0.02rem;
   color: #fff;
 }
-.bottom1{
-margin-top: -0.4rem;
-margin-left: 0.2rem;
+.inputList {
+  margin: 0.1rem 0;
+  overflow: hidden;
 }
-.lip1,.lip2,.lip3{
-margin-left: 0.45rem;
-font-size: 0.13rem
+.inputList > span:nth-child(1) {
+  float: left;
 }
-.lip2{
-margin-top: 0.05rem;
+.inputList > span:nth-child(2) {
+  float: right;
 }
-.lip3{
-margin-top: 0.05rem;
+.history {
+  padding: 0.2rem;
 }
-.img1{
-width:0.4rem;
-margin-left: 0.2rem;
+.history_p {
+  background-color: #f5f5f5;
+  /* padding: 0.01rem; */
+  margin: 0.2rem 0;
+  /* font-size: 0.02rem; */
+  color: #666666;
+}
+.history_clear {
+  text-align: center;
+  width: 100%;
+  font-size: 0.15rem;
+  color: #4c8de0;
+}
+.bottom1 {
+  margin-top: -0.4rem;
+  margin-left: 0.2rem;
+}
+.lip1,
+.lip2,
+.lip3 {
+  margin-left: 0.45rem;
+  font-size: 0.13rem;
+}
+.lip2 {
+  margin-top: 0.05rem;
+}
+.lip3 {
+  margin-top: 0.05rem;
+}
+.img1 {
+  width: 0.4rem;
+  margin-left: 0.2rem;
 }
 </style>
