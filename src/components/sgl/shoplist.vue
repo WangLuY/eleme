@@ -63,11 +63,8 @@ export default {
     // 加载更多
     yidong1() {
       var con = document.getElementById("xiask");
-      // console.log(1);
       if (con.scrollTop + con.clientHeight + 50 >= con.scrollHeight) {
         this.numall = this.numall + 10;
-        // this.x1 = parseFloat(this.x1) + 0.1;
-        // this.y1 = parseFloat(this.y1) + 0.1;
         this.getnear();
       }
     },
@@ -107,9 +104,8 @@ export default {
           "&longitude=" +
           this.$store.state.longitude +
           "&order_by=" +
-          this.$store.state.paixuId +
-          "&limit=" +
-          this.numall,
+          this.$store.state.paixuId,
+          //  +"&limit=" + this.numall
         method: "get"
       }).then(res => {
         this.allShop = res.data;
