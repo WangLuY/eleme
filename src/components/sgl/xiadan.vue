@@ -24,8 +24,6 @@
       </div>
 
       <!-- 如果用下边（函数注释部分）局部传参方法，则用这两种拼接方式跳转 -->
-      <!-- :to="'shangjiaDetails?shopId'+getId" -->
-      <!-- @click="sentId() -->
 
       <router-link to="shangjiaDetails">
         <img class="xiadanTop9" src="../../assets/jright.png" />
@@ -125,7 +123,6 @@ export default {
   display: inline-block;
   z-index: 11;
   height: 2px;
-  /* border: 1px solid red; */
 }
 .xiadan {
   text-align: left;
