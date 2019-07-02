@@ -42,9 +42,11 @@
       <ul>
         <li v-for="(v,i) in After" :key="i" class="inputList" @click="interFood(v)">
           <span>{{v}}</span>
-          <span @click="delMsg(i)">删除</span>
+          <img @click="delMsg(i)" @click.stop src="../img/quxiao.png" alt="">
+          <!-- <span @click="delMsg(i)">删除</span> -->
         </li>
       </ul>
+      
       <p class="history_clear" @click="delAll()">删除历史记录</p>
     </div>
 
@@ -174,18 +176,21 @@ export default {
       // console.log(this.After.length);
     },
     delAll() {
-      // for (let index = 0;  index< this.After.length; index++) {
-      //     this.After.pop();
-      // }
       this.After = null;
       localStorage.removeItem("food");
     },
     delMsg(i) {
       this.After.splice(i, 1);
-      // for (let index = 0; index < this.After.length; index++) {
-      //     this.localStr+=this.After[i]+",";
-      // }
-      // localStorage.food=this.localStr;
+      // console.log(this.After);
+      if(this.After.length==0){
+        localStorage.removeItem("food");
+      }
+      else{
+        for (let index = 0; index < this.After.length; index++) {
+          this.localStr=this.After.join(",");
+        }
+        localStorage.food=this.localStr;
+      }
     },
     interFood(v) {
       console.log(v);
@@ -246,21 +251,34 @@ export default {
 .inputList > span:nth-child(2) {
   float: right;
 }
-.history {
-  padding: 0.2rem;
+.inputList{
+    padding: 0.1rem ;
+    overflow: hidden;
+     background-color: #fff;
+    border-bottom:1px solid #e4e4e4;
 }
-.history_p {
-  background-color: #f5f5f5;
-  /* padding: 0.01rem; */
-  margin: 0.2rem 0;
-  /* font-size: 0.02rem; */
-  color: #666666;
+/* .inputList>span:nth-child(1){
+    float: left;
+} */
+li img{
+    float:right;
 }
-.history_clear {
-  text-align: center;
-  width: 100%;
-  font-size: 0.15rem;
-  color: #4c8de0;
+.history{
+    background-color: #fff;
+}
+.history_p{
+    background-color: #F5F5F5;
+    /* padding: 0.01rem; */
+    padding: 0.1rem ;
+    /* font-size: 0.02rem; */
+    color: #666666;
+}
+.history_clear{
+    text-align: center;
+    width: 100%;
+    font-size: 0.15rem;
+    color: #4C8DE0;
+    padding: 0.1rem 0;
 }
 .bottom1 {
   margin-top: -0.4rem;
