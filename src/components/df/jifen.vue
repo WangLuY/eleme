@@ -9,7 +9,7 @@
       <div id="content">
         <div id="top">
           <p>当前积分</p>
-          <router-link to="/jfwenti">
+          <router-link tag="div" to="/jfwenti">
             <div>
               <img id="wen" src="../img/wenhao.png" alt="">
               <span>积分说明</span>
@@ -75,6 +75,7 @@ export default {
 }
 #top div {
   float: right;
+   color: #3190e8;
 }
 #bottom > p {
   color: #99a4be;

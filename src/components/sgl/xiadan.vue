@@ -88,7 +88,7 @@ export default {
       console.log(this.getId);
       this.getHttp();
     },
-    getHttp() {
+    getHttp(){
       const api = "https://elm.cangdu.org/shopping/restaurant/" + this.$store.state.selfId;
       this.$http({
         url: api,
@@ -162,6 +162,7 @@ export default {
 .xiadanTop0 {
   filter: blur(16px);
   -webkit-background-color: rgba(0, 0, 0, 0.9);
+  margin: 0
 }
 .xiadanTop1 {
   width: 0.12rem;

@@ -3,7 +3,7 @@
     <div id="nav">
       <img @click="back()" src="../img/左箭头.png" alt />
       <span>{{this.$route.query.name}}</span>
-      <router-link id="switchover" to="/citylist">
+      <router-link tag="p" id="switchover" to="/citylist">
       <div>切换城市</div>
       </router-link>
     </div>
@@ -82,7 +82,7 @@ export default {
 
 <style scoped>
 #nav span{
-  margin-left: 0.5rem !important;
+  margin-left: 0.4rem !important;
 }
 #changecity {
   font-size: 0.1rem;
@@ -90,10 +90,11 @@ export default {
 .search {
   box-sizing: border-box;
   width: 100%;
-  margin-top: 0.6rem;
-  border-top: 1px solid #9c9c9c;
-  border-bottom: 1px solid #9c9c9c;
+  margin-top: 0.5rem;
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
   padding: 0.1rem 0.3rem;
+  background-color: #fff;
 }
 .search > input {
   width: 100%;
@@ -111,24 +112,22 @@ export default {
   border-radius: 0.02rem;
   color: white;
 }
-.result {
-  /* margin-top: 0.6rem; */
-}
 .resultlist > li {
   padding: 0.05rem 0.1rem;
   border: 1px solid #e4e4e4;
+  background-color: #fff;
 }
 .resultlist p:nth-child(1) {
   font-size: 0.15rem;
 }
 .resultlist p:nth-child(2) {
   color: #abab9f;
-  margin-top: 0.05rem;
+  margin-top: 0.07rem;
   font-size: 0.05rem;
 }
 #switchover {
   float: right;
-  font-size: 0.15rem;
+  font-size: 0.12rem;
   margin-right: 10px;
 }
 </style>

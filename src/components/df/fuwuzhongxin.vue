@@ -387,6 +387,9 @@ export default {
 #top-right {
   text-align: center;
 }
+#top-right a {
+  color: black;
+}
 #conter > p {
   font-size: 0.2rem;
   padding: 0.2rem;

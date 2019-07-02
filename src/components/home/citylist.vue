@@ -26,7 +26,7 @@
       <p>热门城市</p>
       <ul>
         <li :key="i" v-for="(v,i) in datas">
-            <router-link :to="'/dingwei?name='+v.name+'&&id='+v.id">{{v.name}}</router-link>
+            <router-link tag="p" :to="'/dingwei?name='+v.name+'&&id='+v.id">{{v.name}}</router-link>
         </li>
       </ul>
     </div>
@@ -38,7 +38,7 @@
           </p>
           <ul class="all">
             <li  :key="i" v-for="(v,i) in value">
-              <router-link :to="'/dingwei?name='+v.name+'&&id='+v.id">{{v.name}}</router-link>
+              <router-link tag="span" :to="'/dingwei?name='+v.name+'&&id='+v.id">{{v.name}}</router-link>
             </li>
           </ul>
         </li>
@@ -98,10 +98,7 @@ export default {
         console.log(arr);
         for (var i = 0; i < arr.length; i++) {
           this.groupCities[arr[i]] = res.data[arr[i]];
-        //   this.$set(this.groupCities, arr[i], res.data[arr[i]]);
         }
-        // this.groupCities = res.data;
-        // var arr = [];
       });
     }
   }

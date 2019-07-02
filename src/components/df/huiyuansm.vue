@@ -46,6 +46,7 @@ h4{
 }
 #content{
   padding: 0.1rem;
+  margin-top: 0.3rem;
 }
 #content p{
     line-height: 0.25rem;
