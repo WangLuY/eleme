@@ -56,7 +56,6 @@ export default {
       this.arrLo = arr4.split(",");
       //字符串去重
       //将数组中的元素去重
-      
       for (var i = 0; i < this.arrName.length; i++) {
         const historyObj={};
         if (this.arrNameAf.indexOf(this.arrName[i]) == -1) {
@@ -74,12 +73,12 @@ export default {
         if (this.arrLoAf.indexOf(this.arrLo[i]) == -1) {
           this.arrLoAf.push(this.arrLo[i]);
           historyObj['longitude']=this.arrLo[i]; 
+          this.historyArr.push(historyObj);
         }
-        this.historyArr.push(historyObj);
       }
       
       //  console.log(this.historyObj); 
-       console.log(this.historyArr);
+      //  console.log(this.historyArr);
     },
     //清除历史记录
     clearHistory() {

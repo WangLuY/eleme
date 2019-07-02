@@ -254,7 +254,7 @@ export default {
 }
 .shaixuan {
   width: 50%;
-  border: 1px solid #eff0f3;
+  /* border: 1px solid #eff0f3; */
   height: 0.34rem;
   line-height: 0.34rem;
   color: #c2c6cd;
@@ -267,7 +267,7 @@ export default {
   top: 0.9rem;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid;
+  /* border: 1px solid; */
 }
 .top_b .el-input__inner {
   /* border: 1px solid #DCDFE6; */
@@ -335,31 +335,6 @@ export default {
   /* border-radius: 50%; */
   height: 100%;
 }
-/* #saiX {
-  color: #666;
-  font-size: 0.14rem;
-} */
-/* #saiX1 {
-  border: #e4e4e4 solid 0.01rem;
-  width: 1.23rem;
-  border-radius: 0.05rem;
-  margin-top: 0.005rem;
-} */
-/* #saiX2 {
-  border: #3190e8 solid 0.01rem;
-  width: 1.23rem;
-  border-radius: 0.05rem;
-  margin-top: 0.005rem;
-} */
-/* #sai_x {
-  background-color: #fff;
-  border-top: #e4e4e4 0.01rem solid;
-  position: fixed;
-  left: 0;
-  top: 0.89rem;
-  z-index: 100;
-  width: 100%;
-} */
 #sai_1,
 #sai_3 {
   color: #4e4e4e;
@@ -376,43 +351,11 @@ export default {
   margin-bottom: 0.1rem;
   width: 30vw;
   height: 0.3rem;
-  border: #e4e4e4 0.01rem solid;
+  /* border: #e4e4e4 0.01rem solid; */
   line-height: 0.3rem;
 }
 #sai_ul {
   background-color: #fff;
   overflow: hidden;
 }
-/* #sai_4 {
-  color: #4e4e4e;
-  font-size: 0.11rem;
-  margin-top: 0.1rem;
-  margin-left: 0.12rem;
-  border: #e4e4e4 0.01rem solid;
-  line-height: 0.3rem;
-  float: left;
-  width: 28vw;
-  height: 0.3rem;
-} */
-/* #sai_4 input,
-#sai_2 input {
-  margin-left: 0.06rem;
-  margin-right: 0.1rem;
-} */
-/* #wei_b {
-  width: 100vw;
-  height: 0.5rem;
-  background-color: #e4e4e4;
-  position: fixed;
-  left: 0;
-  top: 2.61rem;
-  z-index: 100;
-} 
-#quanp {
-  background-color: rgba(0, 0, 0, 0.2);
-  height: 100vh;
-  margin-top: 0.5rem;
-  width: 100vw;
-  opacity: 0.4;
-} */
 </style>
