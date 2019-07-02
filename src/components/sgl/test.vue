@@ -354,10 +354,10 @@ export default {
   width: 0.2rem;
   height: 0.2rem;
   font-size: 0.2rem;
-  position: relative;
+  position: absolute;
   line-height: 0.2rem;
   text-align: center;
-  top: 0;
+  top: 0.26rem;
   right: 0;
   color: white;
   border-radius: 50%;
@@ -397,6 +397,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
 }
 .allfoodsImg {
   width: 1rem;

@@ -86,7 +86,7 @@ export default {
     //   fullscreen:true,
     //   text:'正在加载',
     //   spinner:'el-icon-loading'
-    // })
+    // }
     console.log(this.$route.query);
     console.log(this.$route.query.address);
     this.add=this.$route.query.address;

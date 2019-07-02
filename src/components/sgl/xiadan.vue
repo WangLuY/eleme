@@ -4,15 +4,15 @@
     <div class="xiadanTop">
       <div class="xiadanTop0">
         <img
-          :src="'https://elm.cangdu.org/img/'+data.image_path"
+          :src="'https://elm.cangdu.org/img/'+Spadd.image_path"
           style="width:3.75rem; height: 3.3rem;"
         />
       </div>
       <img class="xiadanTop1" @click="fanhui" src="../../assets/back.png" alt />
-      <img class="xiadanTop2" :src="'https://elm.cangdu.org/img/'+data.image_path" alt />
-      <span class="xiadanTop3">{{data.name}}</span>
+      <img class="xiadanTop2" :src="'https://elm.cangdu.org/img/'+Spadd.image_path" alt />
+      <span class="xiadanTop3">{{Spadd.name}}</span>
       <br />
-      <span class="xiadanTop4">商家配送/分钟送达/{{data.piecewise_agent_fee.tips}}</span>
+      <span class="xiadanTop4">商家配送/分钟送达/{{Spadd.piecewise_agent_fee.tips}}</span>
       <br />
       <span class="xiadanTop5">公告:{{data.promotion_info}}</span>
       <br />
@@ -22,6 +22,7 @@
         <span class="xiadanTop8">{{Spadd.activities.length}}个活动</span>
         <img class="xiadanTop10" src="../../assets/jright.png" />
       </div>
+      
 
       <!-- 如果用下边（函数注释部分）局部传参方法，则用这两种拼接方式跳转 -->
       <!-- :to="'shangjiaDetails?shopId'+getId" -->

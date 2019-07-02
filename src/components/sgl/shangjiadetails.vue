@@ -72,8 +72,8 @@ export default {
     },
     methods: {
          fanhui(){
-            // this.$router.push("xiadan");
-            this.$router.back();
+            this.$router.push("xiadan");
+            // this.$router.back();
         },
         getSpadd(){
             this.Spadd=this.$store.state.QJ;
