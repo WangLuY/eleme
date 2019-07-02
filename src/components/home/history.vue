@@ -1,12 +1,11 @@
 <template>
-  <div>
+  <div id="history">
     <p>搜索历史</p>
     <div>
       <ul class="resultlist" v-if="showClear">
         <li v-for="(v,i) in historyArr" :key="i" @click="hisDingwei(v)">
             <p class="res_1">{{v.name}}</p>
             <p class="res_2">{{v.address}}</p>
-          <!-- </router-link> -->
         </li>
         <p @click="clearHistory()" class="clear">清空所有</p>
       </ul>
@@ -97,11 +96,23 @@ export default {
 </script>
 
 <style scoped>
+#history>p{
+  padding: 0.1rem;
+  font-size: 0.05rem;
+  background-color: #e4e4e4;
+  border-top:1px solid #999999;
+  border-bottom:1px solid #999999;  
+}
+.resultlist li{
+  background-color: #fff;
+  padding: 0.1rem;
+  border-bottom: 1px solid #e4e4e4;
+}
 .clear {
   width: 100%;
   height: 0.4rem;
   font-size: 0.15rem;
-  background-color: #3190e8;
+  background-color: #fff;
   text-align: center;
   line-height: 0.4rem;
 }
@@ -110,5 +121,7 @@ export default {
 }
 .res_2 {
   font-size: 0.1rem !important;
+  color: #666666;
+  margin-top:0.07rem; 
 }
 </style>
