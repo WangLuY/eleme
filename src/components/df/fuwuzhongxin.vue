@@ -8,8 +8,10 @@
     <div id="conter">
       <div id="top">
         <div id="top-left">
-          <img src="../img/kefu.png" alt />
-          <p>在线客服</p>
+          <a href="tel:10086">
+            <img src="../img/kefu.png" alt />
+            <p>在线客服</p>
+          </a>
         </div>
         <div id="top-right">
           <a href="tel:15716646150">
@@ -387,7 +389,7 @@ export default {
 #top-right {
   text-align: center;
 }
-#top-right a {
+#top a {
   color: black;
 }
 #conter > p {
