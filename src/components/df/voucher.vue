@@ -1,6 +1,6 @@
 <template>
   <div id="voucher">
-    <router-link to="/djqshuoming">
+    <router-link tag="div" to="/djqshuoming">
     <div id="top">
       <img id="wen" src="../img/wenhao.png" alt="">
       <span>商家代金券说明</span>
