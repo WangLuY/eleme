@@ -121,7 +121,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style scoped>   
 .citysearchTop {
   width: 100%;
   height: 0.45rem;
