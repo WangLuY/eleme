@@ -124,19 +124,9 @@ export default {
           });
         });
       } else if (i == 4) {
-        this.$http({
-          url: api,
-          method: "get"
-          //用于表示用户代理是否应该在跨域请求的情况下从其它域发送cookies --- 不使用缓存数据
-        }).then(res => {
           this.$router.push({
-            name: "huiyuanwt",
-            query: {
-              phototutorialCaption: res.data.phototutorialCaption,
-              phototutorialContent: res.data.phototutorialContent
-            }
+            name: "paidapian"
           });
-        });
       } else if (i == 5) {
         this.$http({
           url: api,

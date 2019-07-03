@@ -29,6 +29,7 @@ import Redpacket from '@/components/df/redpacket'
 import Redexplain from '@/components/df/redexplain'
 import Voucher from '@/components/df/voucher'
 import Download from '@/components/df/download'
+import Paidapian from '@/components/df/paidapian'
 import Djqshuoming from '@/components/df/djqshuoming'
 import Jifen from '@/components/df/jifen'
 import Jfwenti from '@/components/df/jfwenti'
@@ -84,6 +85,11 @@ export default new Router({
       path: '/resetpasswords',
       name: 'resetpasswords',
       component: Resetpasswords
+    },
+    {
+      path: '/paidapian',
+      name: 'paidapian',
+      component: Paidapian
     },
     {
       path: '/dingdan',

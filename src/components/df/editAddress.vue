@@ -115,7 +115,7 @@ export default {
           // this.$store.commit("getUsers", res.data);
           //登陆成功，跳转到首页,编程式路由跳转，传值query或者params传值
           this.$router.push({
-            name: "address"
+            name: "add"
           });
         }
       });
