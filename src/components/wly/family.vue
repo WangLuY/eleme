@@ -4,8 +4,7 @@
       <img src="./imgs/foot/back.png" @click="back()" alt />
       <p>{{$store.state.dingwei.name}}</p>
       <span>
-        <router-link to="landing" style="color:white">登陆</router-link>|
-        <router-link to="landing" style="color:white">注册</router-link>
+        <router-link to="/register" style="color:white">登陆|注册</router-link>
       </span>
     </div>
     

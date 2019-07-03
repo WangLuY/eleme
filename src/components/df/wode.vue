@@ -36,7 +36,7 @@
       <router-link tag="div" to="/discounts">
         <div class="wo" id="discounts">
           <p>
-            <span class="num2">{{$store.state.sum}}</span>个
+             <span class="num2">{{$store.state.sum||0}}</span>个
           </p>
           <p class="content">我的优惠</p>
         </div>
