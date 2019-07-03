@@ -5,7 +5,7 @@
     <div to="xiadan" id="allShop">
       <img src alt />
       <span>附近商家</span>
-      <ul  @click="yidong1()">
+      <ul >
         <li id="xiask" v-for="(item, index) in allShop" :key="index" class="shoplist" @click="addA(item)">
           <!-- <router-link :to="'xiadangoods?shopId='+item.id" id="shop"> -->
           <router-link :to="'xiadan?shopId='+item.id" id="shop">
@@ -61,13 +61,13 @@ export default {
   },
   methods: {
     // 加载更多
-    yidong1() {
-      var con = document.getElementById("xiask");
-      if (con.scrollTop + con.clientHeight + 50 >= con.scrollHeight) {
-        this.numall = this.numall + 10;
-        this.getnear();
-      }
-    },
+    // yidong1() {
+    //   var con = document.getElementById("xiask");
+    //   if (con.scrollTop + con.clientHeight + 50 >= con.scrollHeight) {
+    //     this.numall = this.numall + 10;
+    //     this.getnear();
+    //   }
+    // },
     fanhui() {
       this.$router.back();
     },
