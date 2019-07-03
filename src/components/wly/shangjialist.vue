@@ -41,7 +41,7 @@
             </ul>
             <ul id="sai_ul">
               <li id="sai_4" :key="i" v-for="(v,i) in shux">
-                <input :checked="qk" type="checkbox" />
+                <input type="checkbox" />
                 {{v.name}}
               </li>
             </ul>
