@@ -648,6 +648,7 @@ export default {
   font-size: 0.2rem;
   background-color: red;
   border-radius: 50%;
+  color: wheat;
 }
 /* 点击后显示的购物车样式 */
 .cargo {

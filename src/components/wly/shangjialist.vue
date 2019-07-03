@@ -41,7 +41,7 @@
             </ul>
             <ul id="sai_ul">
               <li id="sai_4" :key="i" v-for="(v,i) in shux">
-                <input :checked="qk" type="checkbox" />
+                <input type="checkbox" />
                 {{v.name}}
               </li>
             </ul>
@@ -64,6 +64,7 @@ export default {
   data() {
     return {
       xy: false,
+      // qk:true,
       peisong: [],
       shux: [],
       paixus: [],
@@ -123,6 +124,7 @@ export default {
     this.getRest();
     this.getrestList();
     this.getLaandLo();
+    this.getshux(); 
   },
   methods: {
     //返回上一级路由
@@ -343,6 +345,19 @@ export default {
   margin-left: 0.12rem;
   text-align: left;
 }
+#sai_4{
+  float: left;
+  color: #4e4e4e;
+  font-size: 0.11rem;
+  margin-top: 0.1rem;
+  margin-left: 0.12rem;
+  margin-bottom: 0.1rem;
+  width: 30vw;
+  height: 0.3rem;
+  border: #e4e4e4 0.01rem solid;
+  line-height: 0.3rem;
+  text-align: center;
+}
 #sai_2 {
   color: #4e4e4e;
   font-size: 0.11rem;
@@ -351,11 +366,31 @@ export default {
   margin-bottom: 0.1rem;
   width: 30vw;
   height: 0.3rem;
-  /* border: #e4e4e4 0.01rem solid; */
+  border: #e4e4e4 0.01rem solid;
   line-height: 0.3rem;
 }
 #sai_ul {
   background-color: #fff;
   overflow: hidden;
+}
+#wei_b{
+  display: flex;
+  justify-content: space-around;
+  background-color: #F1F1F1;
+}
+#qing_k{
+ width:1.5rem;  
+ background-color: #fff;
+ margin: 0.2rem 0;
+ box-sizing: border-box;
+ border-radius: 0.05rem;
+}
+#que_d{
+  width:1.5rem;
+  color: #fff;
+  background-color: #78CE7F;
+  margin: 0.2rem 0;
+  box-sizing: border-box;
+  border-radius: 0.05rem;
 }
 </style>
